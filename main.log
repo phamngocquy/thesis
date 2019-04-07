@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.16)  4 APR 2019 04:38
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.16)  7 APR 2019 15:20
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -818,37 +818,104 @@ Underfull \hbox (badness 10000) in paragraph at lines 39--51
  []
 
 [4 <./images/general_architecture_3_1.png>]
-LaTeX Font Info:    Calculating math sizes for size <6.5> on input line 66.
+<images/class_dependency.png, id=21, 1025.8325pt x 323.2075pt>
+File: images/class_dependency.png Graphic file (type png)
+<use images/class_dependency.png>
+Package pdftex.def Info: images/class_dependency.png  used on input line 58.
+(pdftex.def)             Requested size: 461.62038pt x 145.44203pt.
+<images/class_method_structure.png, id=22, 644.4075pt x 403.5075pt>
+File: images/class_method_structure.png Graphic file (type png)
+<use images/class_method_structure.png>
+Package pdftex.def Info: images/class_method_structure.png  used on input line 
+65.
+(pdftex.def)             Requested size: 289.9807pt x 181.57669pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--69
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 53--69
+
+ []
+
+[5 <./images/structure_tree.png>] [6 <./images/class_dependency.png> <./images/
+class_method_structure.png>]
+LaTeX Font Info:    Calculating math sizes for size <6.5> on input line 87.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 66.
+(Font)              size <5> substituted on input line 87.
 
 
 LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <3.25> not available
-(Font)              size <5> substituted on input line 66.
+(Font)              size <5> substituted on input line 87.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <4.54997> not available
-(Font)              size <5> substituted on input line 66.
+(Font)              size <5> substituted on input line 87.
 
 
 LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <3.25> not available
-(Font)              size <5> substituted on input line 66.
+(Font)              size <5> substituted on input line 87.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <4.54997> not available
-(Font)              size <5> substituted on input line 66.
+(Font)              size <5> substituted on input line 87.
 
 
 LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <3.25> not available
-(Font)              size <5> substituted on input line 66.
+(Font)              size <5> substituted on input line 87.
 
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <4.54997> on input line 66.
+(Font)              <4.54997> on input line 87.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <3.25> on input line 66.
-[5 <./images/structure_tree.png>] [6] [7] [8] [9
+(Font)              <3.25> on input line 87.
+[7]
+<images/ast_class_java-boring.png, id=44, 493.3632pt x 416.2752pt>
+File: images/ast_class_java-boring.png Graphic file (type png)
+<use images/ast_class_java-boring.png>
+Package pdftex.def Info: images/ast_class_java-boring.png  used on input line 9
+5.
+(pdftex.def)             Requested size: 493.362pt x 416.27419pt.
+
+Overfull \hbox (21.33076pt too wide) in paragraph at lines 95--96
+ [][] 
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--99
+
+ []
+
+[8 <./images/ast_class_java-boring.png (PNG copy)>]
+<images/AimplementsB.png, id=48, 718.685pt x 415.5525pt>
+File: images/AimplementsB.png Graphic file (type png)
+<use images/AimplementsB.png>
+Package pdftex.def Info: images/AimplementsB.png  used on input line 109.
+(pdftex.def)             Requested size: 359.34161pt x 207.77574pt.
+<images/CextendD.png, id=49, 821.0675pt x 704.6325pt>
+File: images/CextendD.png Graphic file (type png)
+<use images/CextendD.png>
+Package pdftex.def Info: images/CextendD.png  used on input line 115.
+(pdftex.def)             Requested size: 410.53275pt x 352.3154pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 104--119
+
+ []
+
+[9] [10 <./images/AimplementsB.png> <./images/CextendD.png>]
+<images/D_extends_E.png, id=58, 718.685pt x 560.0925pt>
+File: images/D_extends_E.png Graphic file (type png)
+<use images/D_extends_E.png>
+Package pdftex.def Info: images/D_extends_E.png  used on input line 126.
+(pdftex.def)             Requested size: 359.34161pt x 280.04556pt.
+
+Underfull \hbox (badness 10000) in paragraph at lines 123--131
+
+ []
+
+[11 <./images/D_extends_E.png>] [12] [13
 
 ] (./main.aux)
 
@@ -857,13 +924,13 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 4635 strings out of 492982
- 63790 string characters out of 6134896
- 156119 words of memory out of 5000000
- 8121 multiletter control sequences out of 15000+600000
+ 4671 strings out of 492982
+ 64774 string characters out of 6134896
+ 155182 words of memory out of 5000000
+ 8151 multiletter control sequences out of 15000+600000
  18932 words of font info for 36 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 51i,16n,40p,840b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 51i,17n,40p,1337b,348s stack positions out of 5000i,500n,10000p,200000b,80000s
 </usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi12.pfb></us
 r/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/share
 /texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr12.pfb></usr/share/texliv
@@ -873,10 +940,10 @@ onts/type1/vntex/vnr/vnbx12.pfb></usr/share/texlive/texmf-dist/fonts/type1/vnte
 x/vnr/vnbx7.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr12.pfb>
 </usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnr7.pfb></usr/share/texli
 ve/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb>
-Output written on main.pdf (9 pages, 203913 bytes).
+Output written on main.pdf (13 pages, 1776180 bytes).
 PDF statistics:
- 79 PDF objects out of 1000 (max. 8388607)
- 53 compressed objects within 1 object stream
+ 103 PDF objects out of 1000 (max. 8388607)
+ 62 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 11 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 41 words of extra memory for PDF output out of 10000 (max. 10000000)
 
