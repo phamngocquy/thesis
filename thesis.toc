@@ -1,7 +1,7 @@
 \babel@toc {vietnamese}{}
-\contentsline {chapter}{Danh s\'ach b\h {a}ng}{vi}{chapter*.1}
-\contentsline {chapter}{Danh s\IeC {\'a}ch k\IeC {\'y} hi\IeC {\d \ecircumflex }u, ch\IeC {\~\uhorn } vi\IeC {\'\ecircumflex }t t\IeC {\'\abreve }t}{vii}{chapter*.2}
-\contentsline {chapter}{Danh s\'ach h\`inh v\~e}{viii}{chapter*.2}
+\contentsline {chapter}{Danh s\'ach b\h {a}ng}{vii}{chapter*.1}
+\contentsline {chapter}{Danh s\IeC {\'a}ch k\IeC {\'y} hi\IeC {\d \ecircumflex }u, ch\IeC {\~\uhorn } vi\IeC {\'\ecircumflex }t t\IeC {\'\abreve }t}{viii}{chapter*.2}
+\contentsline {chapter}{Danh s\'ach h\`inh v\~e}{ix}{chapter*.2}
 \contentsline {chapter}{\numberline {1}\IeC {\DJ }\IeC {\d \abreve }t v\IeC {\'\acircumflex }n \IeC {\dj }\IeC {\`\ecircumflex }}{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Ki\IeC {\'\ecircumflex }n th\IeC {\'\uhorn }c c\IeC {\ohorn } s\IeC {\h \ohorn }}{2}{chapter.2}
 \contentsline {chapter}{\numberline {3}Ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p ki\IeC {\h \ecircumflex }m tra s\IeC {\d \uhorn } tu\IeC {\^a}n th\IeC {\h u} m\IeC {\~\acircumflex }u thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } cho d\IeC {\d \uhorn } \IeC {\'a}n s\IeC {\h \uhorn } d\IeC {\d u}ng Java}{3}{chapter.3}
@@ -13,4 +13,8 @@
 \contentsline {subsection}{\numberline {3.2.2}X\IeC {\^a}y d\IeC {\d \uhorn }ng \IeC {\dj }\IeC {\`\ocircumflex } th\IeC {\d i} ph\IeC {\d u} thu\IeC {\d \ocircumflex }c t\IeC {\`\uhorn } c\IeC {\^a}y c\IeC {\'\acircumflex }u tr\IeC {\'u}c}{14}{subsection.3.2.2}
 \contentsline {subsection}{\numberline {3.2.3}V\IeC {\'\i } d\IeC {\d u} minh h\IeC {\d o}a}{17}{subsection.3.2.3}
 \contentsline {section}{\numberline {3.3}Ki\IeC {\h \ecircumflex }m tra s\IeC {\d \uhorn } tu\IeC {\^a}n th\IeC {\h u} m\IeC {\~\acircumflex }u thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } b\IeC {\^e}n trong m\IeC {\~a} ngu\IeC {\`\ocircumflex }n}{17}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}X\IeC {\^a}y d\IeC {\d \uhorn }ng \IeC {\dj }\IeC {\`\ocircumflex } th\IeC {\d i} g\IeC {\d o}i t\IeC {\uhorn } c\IeC {\^a}y c\IeC {\'\acircumflex }u tr\IeC {\'u}c}{19}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Ki\IeC {\'\ecircumflex }m tra s\IeC {\d \uhorn } tu\IeC {\^a}n th\IeC {\h u} m\IeC {\~\acircumflex }u thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex }}{19}{subsection.3.3.2}
+\contentsline {chapter}{\numberline {4}C\IeC {\^o}ng c\IeC {\d u} v\IeC {\`a} th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{23}{chapter.4}
+\contentsline {section}{\numberline {4.1}Ki\IeC {\'\ecircumflex }n tr\IeC {\'u}c v\IeC {\`a} c\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t c\IeC {\^o}ng c\IeC {\d u}}{24}{section.4.1}
 \contentsfinish 

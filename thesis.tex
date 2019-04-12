@@ -13,7 +13,6 @@
 \usepackage{tikz}
 \usepackage{varwidth}
 \usepackage{float}
-\usepackage{listings}
 \usepackage{color}
 \usepackage{multirow}
 \usepackage{booktabs}
@@ -23,7 +22,7 @@
 %\usepackage[font=bf]{caption}
 %\counterwithin{figure}{chapter}
 
-\renewcommand\labelitemi{--}
+%\renewcommand\labelitemi{--}
 
 \setlength{\parskip}{6pt}
 
@@ -218,7 +217,7 @@
 \chapter{Phương pháp kiểm tra sự tuân thủ mẫu thiết kế cho dự án sử dụng Java}
 \newpage
 Mẫu thiết kế là tập hợp các luật nhằm mô tả cách giải quyết một vấn đề trong thiết kế có thể là vấn đề lặp lại nhiều lần trong dự án, là một khía cạnh của việc đảm bảo chất lượng mã nguồn. Với những dự án công nghệ thông tin nói chung và dự án Java nói riêng. Ở các mẫu thiết kế hướng đối tượng, tập hợp các luật về thiết kế đem lại sự tương tác chặt chẽ giữa các thành phần trong mã nguồn với nhau. Những tương tác này có thể tổng quát hóa thành những dạng phụ thuộc nhất định. Đưa ra góc nhìn của mã nguồn về mặt cấu trúc. Do đó, phương pháp phát hiện sự tuân thủ mẫu thiết kế bên trong mã nguồn mà khóa luận này đễ xuất, đi theo hướng phân tích cấu trúc của mã nguồn.\\
-Phương pháp phân tích cấu trúc mã nguồn dựa trên phấn tích tĩnh mã nguồn, bởi vì việc phân tích mã nguồn tĩnh đem lại độ chính xác tốt và quá trình phân tích không bắt buộc mã nguồn có thể thực thi được. Đem lại sự linh hoạt cho phương pháp này, dữ liệu đầu vào có thể là mã nguồn hoặc bất cứ một hay nhiều thành phần của mã nguồn.\\
+Phương pháp phân tích cấu trúc mã nguồn dựa trên phấn tích tĩnh mã nguồn, bởi vì việc phân tích mã nguồn tĩnh đem lại độ chính xác tốt và quá trình phân tích không bắt buộc mã nguồn có thể thực thi được. Đem lại sự linh hoạt cho phương pháp này, dữ liệu đầu vào có thể là toàn bộ mã nguồn hoặc bất cứ một hay nhiều thành phần của mã nguồn.\\
 Hình 3.1 mô tả phương pháp kiểm tra sự tuân thủ mẫu thiết kế. Đầu tiên, dữ liệu đầu vào được tiền xử lý thành cây cấu trúc, thông qua cây cấu trúc tiến hành phân tích phụ thuộc bên trong mã nguồn, xây dựng đồ thị phụ thuộc. Quá trình này được thực hiện với cả mã nguồn dự án và mã nguồn của những mấu thiết kế được qui định, từ đó tìm ra sự tương đồng của mẫu thiết kế bên trong mã nguồn dự án. Nhằm kiểm tra được sự tuân thủ về mẫu thiết kế bên trong mã nguồn.
 \begin{figure}[h]
 	\centering
@@ -229,7 +228,8 @@ Hình 3.1 mô tả phương pháp kiểm tra sự tuân thủ mẫu thiết kế
 
 \section{Tiền xử lý mã nguồn Java}
 \subsection{Xây dựng cây cấu trúc}
-Đối với phương pháp kiểm tra sự tuân thủ mẫu thiết kế mà khóa luận đề xuất. Cần có một kiểu dữ liệu tường minh và thể hiện được toàn bộ cấu trúc của mã nguồn, trong khi đó mã nguồn của dự án là phức tạp và chưa nhiều thông tin không được dùng tới. Nếu dùng trực tiếp mã sẽ gây khó khăn trong quá trình giải quyết bài toán và ảnh hưởng tới hiệu năng của của công cụ được xây dựng. Do đó cần tiến hành tiền xử lý mã nguồn, xây dựng một kiểu cấu trúc dữ liệu phù hợp. Cây cấu trúc được để xuất như là một kiểu cấu trúc dữ liệu phù hợp nhất thể hiện được toàn bộ cấu trúc của mã nguồn dự án.
+Đối với phương pháp kiểm tra sự tuân thủ mẫu thiết kế mà khóa luận đề xuất. Việc trực tiếp phân tích mã nguồn đầu vào là một giải pháp không tối ưu do sự phức tạp của mã nguồn, các thành phần không được sử dụng tới của mã nguồn ví dụ như các tệp tin xml, yml...
+Do đó, cần có một kiểu dữ liệu tường minh và thể hiện được toàn bộ cấu trúc của mã nguồn, trong khi đó mã nguồn của dự án là phức tạp và chưa nhiều thông tin không được dùng tới. Nếu dùng trực tiếp mã sẽ gây khó khăn trong quá trình giải quyết bài toán và ảnh hưởng tới hiệu năng của của công cụ được xây dựng. Do đó cần tiến hành tiền xử lý mã nguồn, xây dựng một kiểu cấu trúc dữ liệu phù hợp. Cây cấu trúc được để xuất như là một kiểu cấu trúc dữ liệu phù hợp nhất thể hiện được toàn bộ cấu trúc của mã nguồn dự án.
 \\
 \\
 \textbf{Định nghĩa: }(\textit{Cây cấu trúc} \cite{jcia}) Là một đồ thị liên thông với $T = (N,E)$ trong đó $N = \{n_1,n_2,n_3...n_k \}$ là tập các nút trên cây đại diện cho tệp, lớp, phương thức, biến... $E = \{(e_i,e_j) | e_i \in N , e_j \in N \}$ mỗi cặp $e_ie_j$ là cặp hai đỉnh kề của đồ thị.\\\\
@@ -310,7 +310,7 @@ Hình 3.5 mô tả một AST với một Class Java tương ứng. Trong đó m�
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[scale=0.5]{images/D_extends_E}
-	\caption{Mối quan hệ giữa một Class vớ một Interface qua phương thức Implements}
+	\caption{Mối quan hệ giữa một Class với một Interface qua phương thức Implements}
 	\label{fig:D_extends_E}
 \end{figure}\\\\
 \textbf{Use Dependency}: Không giống với \textit{Inheritance Dependency} hay \textit{Polymorphism dependency}, Use Dependency thể hiện sự tương quan giữa các Class về mặt tương tác dữ liệu,khi các đối tượng của lớp này được sử dụng nhứ là thuộc tính, giá trị trả về, kiểu dữ liệu đầu vào, biến địa phương của phương thức của Class khác hoặc được sử dụng để khai kiểu cho một Generic Class.
@@ -418,30 +418,91 @@ việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương
 Đồ thị này là tiền đề đê kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn sẽ được trình bày ở phần sau đây.
 
 \section{Kiểm tra sự tuân thủ mẫu thiết kế bên trong mã nguồn}
-Quá trình kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn, tức là kiểm tra sự tồn tại của một mẫu thiết kế bên trong mã nguồn. Đầu vào củao phần này gồm hai thành phần. Thứ nhất, \textbf{đồ thị phụ thuộc} của mã nguồn dự án. Thứ hai, \textbf{đồ thị phụ thuộc} của những mẫu thiết kế. Ta sẽ đi tiến hành kiểm tra sự tồn tại của từng mẫu thiết kế bên trong mã nguồn. 
+Quá trình kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn, tức là kiểm tra sự tồn tại của một mẫu thiết kế bên trong mã nguồn. Đầu vào của phần này gồm hai thành phần. Thứ nhất, \textbf{đồ thị phụ thuộc} của mã nguồn dự án. Thứ hai, \textbf{đồ thị phụ thuộc} của những mẫu thiết kế. Ta sẽ đi tiến hành kiểm tra sự tồn tại của từng mẫu thiết kế bên trong mã nguồn. 
 Đầu vào của bài toán sẽ là hai đồ thị có hướng. Bản chất của vấn đề sẽ là tìm kiếm sự tồn tại của một đồ thị bên trong một đồ thị khác. Đo đó, thuật toán tìm kiếm đồ thị đẳng cấu \textbf{VF2 algorithm for the Subgraph Isomorphism Problem} được đề xuất để giái quyết bài toán.
+
 
 \noindent \textbf{Ý tưởng của giải thuật VF2} \cite{vf2}:
 \begin{enumerate}
-	\item Assume the problem is to find a subgraph in G1 isomorphic to the graph G2.
-	\item The main idea is to construct a state S which contains a correct partial match between nodes of G1 and G2
-	\item M(s) identifies two sub graphs of G1 and G2, say G1(s) and G2(s),
-	 obtained by selecting from G1 and G2 only the nodes included in M(s),
-	  and the branches connecting them. Where s is a state of the matching process. 
-	\item The main problem is extending M(s) with new branches.
-	\item An extension of S is adding a pair (n,m) where n belongs to G1 and m belongs to G2.
-	\item Feasibility rules is a set of rules that are able to verify the consistency conditions,
-	 making possible the generation of consistent states only.
+	%\item Assume the problem is to find a subgraph in G1 isomorphic to the graph G2.
+	\item Ta cần tím kiếm một đồ thị con của đồ thị G1 mà đẳng cấu với đồ thị G2.
+	%\item The main idea is to construct a state S which contains a correct partial match between nodes of G1 and G2
+	\item  Ý tương ở đây là đi xây dựng một trạng thái S chứa một phần các đỉnh của G1 và G2.
+	%\item M(s) identifies two sub graphs of G1 and G2, say G1(s) and G2(s), obtained by selecting from G1 and G2 only the nodes included in M(s),and the branches connecting them. Where s is a state of the matching process. 
+	
+	\item M(s) là tập ánh xạ xác định hai đồ thị con của G1 và G2, gỉa sử là G1(s) và G2(s) thu được bằng cách chọn từ G1 và G2 cách cặp đỉnh chỉ chứa trong M(s) và các cạnh kết nối giữa chúng. Trong đó s là trạng thái của quá trình khớp đồ thị
+	%\item The main problem is extending M(s) with new branches.
+	\item Ta cần mở rộng tập M(s) với những cặp đỉnh mới.
+	%\item An extension of S is adding a pair (n,m) where n belongs to G1 and m belongs to G2.
+	\item Với mỗi trạng thái s, ta tính toán những cặp ánh xạ (n,m) là ứng viên cho  M(s)
+	%\item Feasibility rules is a set of rules that are able to verify the consistency conditions, making possible the generation of consistent states only.
+	\item Tập các luật được định nghĩa trước nhằm xác định một cặp đỉnh có là ánh xạ đúng hay không. Xác định cặp ánh xạ (n,m) có phải là ảnh xạ chính xác hay không. Việc thêm một cặp (n,m) vào M(s), sẽ chuyển trạng thái của s tới s'.
 \end{enumerate}
-\newpage
-Tập các luật (Feasibility Rules \cite{vf2_1368}) được định nghĩa cho giải thuật VF2 như sau:
+\pagebreak
+\subsection{Xây dựng đồ thị gọi tư cây cấu trúc}
+Đồ thị gọi là một đồ thị có hướng $G = (V,E)$. Trong đó V là các đỉnh tương ứng với các nút (class) trong cây cấu trúc, $E \subseteq V \times V$ là tập các cạnh với thuộc tính trên cạnh là phụ thuộc giữa các đỉnh trên đồ thị 
+
+Để xây dựng đồ thị gọi cho giải thuật VF2, ta cần trích xuất các đỉnh (class) và các phụ thuộc giữa chúng từ cây cấu trúc. Các bước để xây dựng đồ thị được trình bày ở Thuật toán \ref{algo:get-input-for-jgraph}.
+
+\begin{thuattoan}
+	\label{algo:get-input-for-jgraph}
+	\caption{Xây dựng đồ thị gọi từ cây cấu trúc}
+	\SetKwInOut{Input}{Input}
+	\SetKwInOut{Output}{Output}
+	\SetKwInOut{Use}{Use}
+	\Input{$root$: nút gốc cây cấu trúc}
+	\Output{$G = (V,E)$: đồ thị gọi}
+	\Use{$getAllClassNode(root)$ các nút (class) của cây}
+	\Use{$getDepedencies()$ phụ thuộc của một nút}
+	N = $T.getAllClassNode(root)$\;
+	G = $Graph()$\;
+	 D = $Set()$\;
+	\ForEach{$n \in $N}{
+		D.$add(n.getDepedencies())$\;
+	}
+	G.$addNode($N$)$\;
+	\ForEach{$d \in $D}{
+		G.$addEdge(d)$\;
+	}
+	\Return G \;
+	
+\end{thuattoan}
+
+\subsection{Kiếm tra sự tuân thủ mẫu thiết kế}
+Như ý tưởng đã trình bày ở trên, việc kiểm tra sự tuân thủ mẫu thiết kế, trình là bài toán tìm kiếm đồ thị con-đẳng cấu giữa hai đồ thị phụ thuộc đại diện cho mã nguồn và mẫu thiết kế. Quá trình tìm kiếm đồ thị đẳng cấu là quá trình ánh xạ các cặp đỉnh từ hai đồ thị. Việc này tạo nên một không gian trạng thái của những đáp án đổi với mỗi trường hợp ánh xạ của mỗi cặp định khác nhau của hai đồ thị. Quá trình này được mô tả như Hình \ref{fig:vf2_example}:
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.5]{images/rule_}
-\end{figure}
-
+	\includegraphics[scale=0.6]{images/_vf2_example}
+	\caption{Mô tả thuật toán VF2}
+	\label{fig:vf2_example}
+\end{figure}\\
+Giải thuật VF2 ra đời nhằm tối ưu quá trình tìm kiếm đáp án tối ưu trong không gian trạng thái, bằng phương pháp đề xuất tập các luật có thể xác định trạng thái tối ưu trong quá trình tìm kiếm cặp đỉnh ánh xạ giữa hai đồ thị, ngoài ra cũng làm giảm số lượng trạng thái được tạo ra trong quá trình tìm kiếm. Tập các luật được biểu diễn như sau:\\\\
+\indent \indent \indent \indent \indent$F(s,n,m) = F_{syn}(s,n,m) \wedge F_{sem}(s,n,m)$\\\\
+Trong đó $F_{syn}$ là tập các luật đánh giá trạng thái dựa trên cấu trúc của đồ thị, $F_{sem}$ đánh giá trạng thái dựa trên các thuộc tính tại đỉnh, cạnh của đồ thị.
+\noindent Tập các luật được định nghĩa cho giải thuật VF2 như sau:
+\begin{enumerate}
+	\item Feasibility Rules \cite{vf2_1368}
+	\begin{itemize}
+		\item $F_{syn}(s,n,m) = R_{pred} \wedge R_{succ} \wedge R_{out} \wedge R_{new}$
+		\item $R_{pred}(s,n,m) \iff\\ (\forall n \in M_1(s) \cup Pred(G_1,n)') \exists m' \in Pred(G_2,m) | (n',m') \in M(s)) \wedge\\
+		(\forall m' \in M_2(s) \cup Pred(G_2,m) \exists n' \in Pred(G_1,n) | (n',m') \in M(s))$
+		\item $R_{succ}(s,n,m) \iff\\ (\forall n \in M_1(s) \cup Succ(G_1,n)') \exists m' \in Succ(G_2,m) | (n',m') \in M(s)) \wedge\\ 
+		(\forall m' \in M_2(s) \cup Succ(G_2,m) \exists n' \in Succ(G_1,n) | (n',m') \in M(s))$
+		\item $R_{in}(s,n,m) \iff\\ (Card(Succ(G_1,n) \cup T^{in}_1(s)) \geq  Card(Succ(G_2,m) \cup T^{in}_2(s))) \wedge\\
+		(Card(Pred(G_1,n)\cup T^{in}_1(s)) \geq Card(Pred(G_2,m)\cup T^{in}_2(s)))$ 
+		\item $R_{out}(s,n,m) \iff\\ (Card(Succ(G_1,n) \cup T^{out}_1(s)) \geq  Card(Succ(G_2,m) \cup T^{out}_2(s))) \wedge\\
+		(Card(Pred(G_1,n)\cup T^{out}_1(s)) \geq Card(Pred(G_2,m)\cup T^{out}_2(s)))$ 
+		\item $R_{new}(s,n,m) \iff\\ Card(\tilde{N}_1(s) \cup Pred(G_1,n)) \geq Card(\tilde{N}_2(s) \cup Pred(G_2,n)) \wedge\\
+		Card(\tilde{N}_1(s) \cup Succ(G_1,n)) \geq Card(\tilde{N}_2(s) \cup Succ(G_2,n))$
+	\end{itemize}
+	\item Semantic Feasibility
+	\begin{itemize}
+		\item $F_{s,n,m} \iff n \approx m  \wedge \forall(n',m') \in M(s),(n,n') \in B_1 \Rightarrow (n,n')\
+		 \wedge \forall(n',m') \in M(s),(n',n) \in B_1 \Rightarrow (n',m) \approx (m',m)$
+	\end{itemize} 
+\end{enumerate}
 \newpage
-\noindent Chi tiết gỉai thuật VF \cite{vf2_1368}:
+\noindent Các bược của giải thuật VF2 \cite{vf2_1368} sẽ được trình bày chi tiết ở Thuật toán \ref{algo:VF2}:
 \begin{thuattoan}[!htbp]
 	\label{algo:VF2}
 	\caption{$VF2$}
@@ -451,22 +512,37 @@ Tập các luật (Feasibility Rules \cite{vf2_1368}) được định nghĩa ch
 	\hspace{5mm}\Input{an intermediate state $s$; the initial state $s_0$ has $M(s_0) = \emptyset $}
 	\hspace{5mm}\Output{the mappings between the two graphs}
 	\hspace{5mm}IF $M(s)$ covers all the node of G2\\
-		\hspace{10mm} \Return M(s)
-		
+	\hspace{10mm} \Return M(s)
+	
 	\hspace{5mm}ELSE\\
-		\hspace{10mm} Compute the set $P(s)$ of the paris candidate for inclusion in $M(s)$\\
-		\hspace{10mm} FOREACH	$p \in P(s)$ \\
-		\hspace{10mm} IF the feasibility reles successd for the inclusion of p in $M(s)$\\
-				\hspace{20mm} Compute the state $s'$ obtained by adding p to $M(s)$\\
-				\hspace{20mm} CALL Match($s'$)\\
-			
-		\hspace{15mm} END IF
-		
-		\hspace{10mm}END FOREACH\\
-		\hspace{10mm}Restore data structures\\
+	\hspace{10mm} Compute the set $P(s)$ of the paris candidate for inclusion in $M(s)$\\
+	\hspace{10mm} FOREACH	$p \in P(s)$ \\
+	\hspace{10mm} IF the feasibility reles successd for the inclusion of p in $M(s)$\\
+	\hspace{20mm} Compute the state $s'$ obtained by adding p to $M(s)$\\
+	\hspace{20mm} CALL Match($s'$)\\
+	
+	\hspace{15mm} END IF
+	
+	\hspace{10mm}END FOREACH\\
+	\hspace{10mm}Restore data structures\\
 	\hspace{5mm}END IF\\
 	END PROCEDURE Match
-\end{thuattoan}
+\end{thuattoan}\\
+Nếu mẫu thiết kế có tồn tại trong mã nguồn, kết quả trả về sẽ là một tập ánh xạ giưa toàn bộ đỉnh của đồ thị từ mẫu thiết kế với các đỉnh tưởng ứng trên đồ thị của mã nguồn.\\
+Từ việc giải quyết được bài toán kiểm tra sự tuân thủ của mẫu thiết kế trong mã nguồn, chương tiếp theo khóa luận sẽ trình bày chi tiết cách triển khai phương pháp đã trình bày vào xây dựng công cụ trong thực tế.
+\chapter{Công cụ và thực nghiệm}
+Ở chương này, khóa luận sẽ mô tả chi tiết về kiến trúc và cách cài đặt công cụ cho phương pháp đã trình bày ở chương trước. Thêm vào đó, một số ví dụ sẽ được sử dụng cho việc thử nghiệm và đánh giá công cụ.
+\newpage
+\section{Kiến trúc và cài đặt công cụ}
+Ở phần này sẽ trình bày về kiến trúc của bộ công cụ JCIA-VT và trình bày chi tiết về những mô-đun mà khóa luận này thực hiện. Kiến trúc của JCIA-VT được mô tả trong Hình 4.1:
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.2]{images/architexture}
+	\caption{Tổng quan kiến trúc JCIA-VT}
+	\label{fig:architexture}
+\end{figure}
+
 
 \begin{thebibliography}{9}
 	\section*{Tiếng Việt}
@@ -486,7 +562,7 @@ Tập các luật (Feasibility Rules \cite{vf2_1368}) được định nghĩa ch
 	Luigi P. Cordella, Pasquale Foggia, Carlo Sansone,and Mario Vento. A (Sub)Graph Isomorphism Algorithm for
 	Matching Large Graphs 10-2004 P1367
 	
-		\bibitem{vf2_1368}
+	\bibitem{vf2_1368}
 	Luigi P. Cordella, Pasquale Foggia, Carlo Sansone,and Mario Vento. A (Sub)Graph Isomorphism Algorithm for
 	Matching Large Graphs 10-2004 P1368-1369
 \end{thebibliography}
