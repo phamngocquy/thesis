@@ -19,8 +19,10 @@
 \contentsline {chapter}{\numberline {4}C\IeC {\^o}ng c\IeC {\d u} v\IeC {\`a} th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{22}{chapter.4}
 \contentsline {section}{\numberline {4.1}Ki\IeC {\'\ecircumflex }n tr\IeC {\'u}c v\IeC {\`a} c\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t c\IeC {\^o}ng c\IeC {\d u}}{23}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}T\IeC {\h \ocircumflex }ng quan b\IeC {\d \ocircumflex } c\IeC {\^o}ng c\IeC {\d u} JCIA-VT}{23}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}Ki\IeC {\'\ecircumflex }n tr\IeC {\'u}c chi ti\IeC {\'\ecircumflex }t c\IeC {\h u}a c\IeC {\^o}ng c\IeC {\d u} ki\IeC {\h \ecircumflex }m tra s\IeC {\d \uhorn } tu\IeC {\^a}n t\IeC {\h u} m\IeC {\~\acircumflex }u thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } b\IeC {\^e}n trong m\IeC {\~a} ngu\IeC {\`\ocircumflex }n}{25}{subsection.4.1.2}
-\contentsline {section}{\numberline {4.2}Tri\IeC {\h \ecircumflex }n khai v\IeC {\`a} th\IeC {\h \uhorn } nghi\IeC {\d \ecircumflex }m}{27}{section.4.2}
+\contentsline {subsection}{\numberline {4.1.2}Ki\IeC {\'\ecircumflex }n tr\IeC {\'u}c v\IeC {\`a} c\IeC {\`a}i \IeC {\dj }\IeC {\d \abreve }t c\IeC {\^o}ng c\IeC {\d u} ki\IeC {\h \ecircumflex }m tra s\IeC {\d \uhorn } tu\IeC {\^a}n th\IeC {\h u} m\IeC {\~\acircumflex }u thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } b\IeC {\^e}n trong m\IeC {\~a} ngu\IeC {\`\ocircumflex }n}{25}{subsection.4.1.2}
+\contentsline {section}{\numberline {4.2}Tri\IeC {\h \ecircumflex }n khai}{27}{section.4.2}
 \contentsline {subsection}{\numberline {4.2.1}Giao di\IeC {\d \ecircumflex }n t\IeC {\h a}i n\IeC {\^e}n m\IeC {\~\acircumflex }u thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex }}{27}{subsection.4.2.1}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{28}{chapter.5}
+\contentsline {subsection}{\numberline {4.2.2}Giao di\IeC {\d \ecircumflex }n ph\IeC {\'a}t hi\IeC {\d \ecircumflex }n m\IeC {\~\acircumflex }u thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } b\IeC {\^e}n trong m\IeC {\~a} ngu\IeC {\`\ocircumflex }n}{28}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{31}{section.4.3}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{32}{chapter.5}
 \contentsfinish 

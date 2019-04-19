@@ -534,7 +534,7 @@ Trong đó $F_{syn}$ là tập các luật đánh giá trạng thái dựa trên
 Nếu mẫu thiết kế có tồn tại trong mã nguồn, kết quả trả về sẽ là một tập ánh xạ giưa toàn bộ đỉnh của đồ thị từ mẫu thiết kế với các đỉnh tưởng ứng trên đồ thị của mã nguồn.\\
 Từ việc giải quyết được bài toán kiểm tra sự tuân thủ của mẫu thiết kế trong mã nguồn, chương tiếp theo khóa luận sẽ trình bày chi tiết cách triển khai phương pháp đã trình bày vào xây dựng công cụ trong thực tế.
 \chapter{Công cụ và thực nghiệm}
-Trong chương này, khóa luận sẽ trình bày về kiến trúc và cách cài đặt của công cụ cho phương pháp đã được trình bày ở chương 3 bao gồm, kiến trúc tổng quan của bộ công cụ JCIA-VT, kiến trúc của công cụ mà khóa luận xây dựng, phương pháp tích hợp công cụ với JCIA-VT. Thêm vào đó, đưa ra một số ví dụ để tiến hành phân tích thử nghiệm và đánh giá công cụ.
+Trong chương này, khóa luận sẽ trình bày về kiến trúc và cách cài đặt của công cụ cho phương pháp đã được trình bày ở chương 3 bao gồm, kiến trúc tổng quan của bộ công cụ JCIA-VT, kiến trúc của công cụ \textit{Kiểm tra sư tuân thủ mẫu thiết kế bên trong mã nguồn} mà khóa luận đề xuất và xây dựng và tích hợp với bộ công cụ với JCIA-VT. Thêm vào đó, đưa ra một số thực nghiệm để tiến hành phân tích thử nghiệm và đánh giá công cụ.
 
 \newpage
 \section{Kiến trúc và cài đặt công cụ}
@@ -552,35 +552,86 @@ Trong chương này, khóa luận sẽ trình bày về kiến trúc và cách c
 	\caption{Tổng quan kiến trúc JCIA-VT}
 	\label{fig:architexture}
 \end{figure}
-\subsection{Kiến trúc chi tiết của công cụ kiểm tra sự tuân tủ mẫu thiết kế bên trong mã nguồn}
-Phần này sẽ trình bày chi tiết về kiến trúc chi tiết của mô-đun kiểm tra sự tuân thủ mã nguồn trong bộ công cụ JCIA-VT. Mô-đun có kiến trúc chi tiết được mô tả như trong hình \ref{fig:detect_design_pattern_architexture}, kiến trúc này được thiết kế dựa trên phương pháp đã mô tả ở phần 3 của khóa luận. Bao gồm bốn thành phần chính:
+\subsection{Kiến trúc và cài đặt công cụ kiểm tra sự tuân thủ mẫu thiết kế bên trong mã nguồn}
+Phần này sẽ trình bày về kiến trúc chi tiết của mô-đun kiểm tra sự tuân thủ mã nguồn trong bộ công cụ JCIA-VT.\\
+Mô-đun được tích hợp trực tiếp bên trong mã nguồn backend của bộ công cụ JCIA-VT. Kiến trúc chi tiết được mô tả như trong hình \ref{fig:detect_design_pattern_architexture}, kiến trúc này được thiết kế dựa trên phương pháp đã mô tả ở phần 3 của khóa luận. Bao gồm bốn thành phần chính:
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[scale=0.35]{images/c4_architexture}
 	\caption{Kiến trúc }
 	\label{fig:detect_design_pattern_architexture}
 \end{figure}\\
-\noindent \textbf{Java Design Pattern Analyzer}: Là thanh phần chịu trách nhiệm phân tích mã nguồn. Đầu vào là mã nguồn Java, đầu ra là đồ thị phụ thuộc của mã nguồn. Mã nguồn sẽ được phân tích và tiến hành xây dựng đồ thị phụ thuộc như đã trình bày ở chưởng 3.  Phần này gồm các gói chính:
+Kiến trúc của công cụ bao gồm năm mô-đun chính bao gồm: xử lý dữ liệu đầu vào (preprocessor), phân tích mã nguồn (Java Design Pattern Analyzer), cơ sở dữ liệu (Database), phát hiện mẫu thiết kế (Detecting Design Pattern), mô hình hóa đầu ra (Visualizer). Do quá trình tích hợp với bộ công cụ JCIA-VT mô-đun tiền xử lý dữ liệu đầu vào sẽ được tái sử dụng, ngoài ra những mô-đun khác của công cụ sẽ cần được xây dựng mới và sẽ được tích hợp thành mội gói bên trong mã nguồn của bộ công cụ  JCIA-VT.
+
 \begin{itemize}
-	\item \textit{ddp.dom}: Định cấu trúc các nút trên cây cấu của mã nguồn
-	\item \textit{ddp.parser}: Phân tích mã nguỗn, xây dựng cây cấu trúc từ mã nguồn
-	\item \textit{ddp.analyzer}: Phân tích cây cấu trúc, thực hiện gắn phụ thuộc giữa các nút trên cây. Những phụ thuộc cần phân tích đã được định nghĩa tại chương 3 mục 3.3.
-	\item \textit{ddp.graph}: Xây dựng đồ thị phụ thuộc, với đầu vào là cây cấu trúc của mã nguồn dự án.
+	\item \noindent \textbf{Java Design Pattern Analyzer}: Là thành phần chịu trách nhiệm phân tích mã nguồn. Đầu vào là mã nguồn Java, đầu ra là đồ thị phụ thuộc của mã nguồn. Đầu tiên cây AST sẽ được sinh ra từ mã nguồn, tiếp đo quá trình xây dựng cây cấu trúc được thực hiện. Từ cây cấu trúc, việc phân tích phụ thuộc được tiến hành.
+	%\begin{itemize}
+	%	\item \textit{ddp.dom}: Định cấu trúc các nút trên cây cấu của mã nguồn
+	%	\item \textit{ddp.parser}: Phân tích mã nguỗn, xây dựng cây cấu trúc từ mã nguồn
+	%	\item \textit{ddp.analyzer}: Phân tích cây cấu trúc, thực hiện gắn phụ thuộc giữa các nút trên cây. Những phụ thuộc cần phân tích đã được định nghĩa tại chương 3 mục 3.3.
+	%	\item \textit{ddp.graph}: Xây dựng đồ thị phụ thuộc, với đầu vào là cây cấu trúc của mã nguồn dự án.
+	%\end{itemize}
+	\item \noindent \textbf{Database}: Quản lý việc lưu trữ cây cấu trúc của mã nguồn cũng như những mẫu thiết kế đã được định nghĩa của dự án. Sự dụng hệ quản trị cơ sở dữ liệu H2. Phần này được xây dựng dựa trên gói \textit{core.DAO} của bộ công cụ JCIA-VT
+	\item \noindent \textbf{Detecting Design Pattern}: Chịu trách nhiệm kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Sử dụng giải thuật VF2 như đã được trình bày tại chương 3 mục 3.4. Với đầu vào là cây cấu trúc của mã nguồn cùng với cây cấu trúc của mẫu thiết kế đã được định nghĩa.
+	\item \noindent \textbf{Visualizer}: Cung cấp giao diện thể hiện kết quả của quá trình kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Kết quả thể hiện dưới dạng đồ thị được triển khai bằng Javascript dựa trên thư việc Visjs \footnote{http://visjs.org/}. Giao tiếp
 \end{itemize}
-\noindent \textbf{Database}: Quản lý việc lưu trữ cây cấu trúc của mã nguồn cũng như những mẫu thiết kế đã được định nghĩa của dự án. Sự dụng hệ quản trị cơ sở dữ liệu H2.\\\\
-\noindent \textbf{Detecting Design Pattern}: Chịu trách nhiệm kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Sử dụng giải thuật VF2 như đã được trình bày tại chương 3 mục 3.4. Với đầu vào là cây cấu trúc của mã nguồn cùng với cây cấu trúc của mẫu thiết kế đã được định nghĩa.\\\\
-\noindent \textbf{Visualizer}: Cung cấp giao diện thể hiện kết quả của quá trình kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Kết quả thể hiện dưới dạng đồ thị được triển khai bằng Javascript dựa trên thư việc Visjs \footnote{http://visjs.org/}.
 \newpage
-\section{Triển khai và thử nghiệm}
+\section{Triển khai}
 Hiện tại công cụ đã được phát triển và đặt, trên một phiên bản mới của JCIA-VT. Cung cấp những giao diện và tính năng mới liên quan tới việc kiểm tra sự tuân thủ của mẫu thiết kế bên trong mã nguồn.
 \subsection{Giao diện tải nên mẫu thiết kế}
-Sau khi đăng nhập thành công vào hệ thống, để có thể tiến hành phân tích, kiểm tra sự tuân thủ mẫu thiết kế bên trong mã nguồn. Người dùng cần tải lên những mẫu thiết kế đã được định nghĩa trước mà dự án sẽ được yêu cầu phát triển dựa trên những mẫu thiết kế đó. Mẫu thiết kế tải nên, nên chỉ tồn tại những tập tin Java và cần được đóng gói thành tập tin nén. Hình \ref{fig:ds_upload_example} mô tả màn hình tải nên một mẫu thiết kế mới.
+Sau khi đăng nhập thành công vào hệ thống, để có thể tiến hành phân tích, kiểm tra sự tuân thủ mẫu thiết kế bên trong mã nguồn. Người dùng cần tải lên những mẫu thiết kế đã được định nghĩa trước mà dự án sẽ được yêu cầu phát triển dựa trên những mẫu thiết kế đó. Mẫu thiết kế tải lên, nên chỉ tồn tại những tập tin Java và cần được đóng gói thành tập tin nén. Hình \ref{fig:ds_upload_example} mô tả màn hình tải nên một mẫu thiết kế mới.
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.36]{images/ds_upload_example}
+	\caption{Giao diện tải lên mẫu thiết kế}
+	\label{fig:ds_upload_example}
+\end{figure}\\
+Giao diện tải lên mẫu thiết kế cung cấp hai tính năng chính. Thứ nhất, tải lên và quản lý mẫu thiết kế. Khi người dùng tải lên mẫu thiết kế mới, mã nguồn của mẫu thiết kế sẽ được tiến hành xử lý để xây dựng đồ thị phụ thuộc thể hiện cấu trúc của mã nguồn sau đó được lưu trữ trên cơ sở dữ liệu nhằm phục vụ công việc kiểm tra sự tuân thủ mẫu thiết kế. Thứ hai: quản lý và hiển thị đồn thị phụ thuộc của mẫu thiết kế, người dùng có thể thêm hoặc xóa mẫu thiết kế, đồng thời giao diện cũng cung cấp cửa sổ hiển thị đồ thị phụ thuộc của mẫu thiết kế.
+\subsection{Giao diện phát hiện mẫu thiết kế bên trong mã nguồn}
+Sau khi tiến hành tải lên những mẫu thiết kế được yêu cầu trong việc phát triển mã nguồn. Ta tiến hành phân tích mã nguồn để kiểm tra sự tuân thủ của mã nguồn đối với những mẫu thiết kế đã được qui định. Ở phân này, ta sẽ trình bày lần lượt từng bươc một theo luồng điều khiển, bao gồm quá trình tải liên mã nguồn dự án, quá trình phân tích ảnh hưởng và quá trình kiểm tra sự tuân thủ mã mẫu thiế kế bên trong mã nguồn của dự án.\\
+Đầu tiên, mã nguồn sẽ được tiến hành tải nên, tại giao diện tại lên mã nguồn dự án như Hình \ref{fig:upload_project_source_code}. Cần thêm được dẫn tới thư mục chứa mã nguồn như trong giao diện mô tả.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.4]{images/ds_upload_example}
-	\caption{Màn hình tải lên mẫu thiết kế}
-	\label{fig:ds_upload_example}
-\end{figure}
+	\includegraphics[scale=0.35]{images/upload_project}
+	\caption{Giao diện tải lên mã nguồn dự án}
+	\label{fig:upload_project_source_code}
+\end{figure}\\
+Sau khi nhấn chọn \textit{Upload}, hệ thống chuyển tới giao diện lịch sử và đồng thời tiến hành phân tích mã nguồn dự án. Giao diện lịch sử sẽ được thể hiện như trong Hình \ref{fig:history_screen}. Bao gồm thông tin về quá trình phân tích mã nguồn, thông tin về mã nguồn của các dự án khác nhau.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.38]{images/history_screen}
+	\caption{Giao diện màn hình lịch sử}
+	\label{fig:history_screen}
+\end{figure}\\
+Quá trình phân tích mã nguồn hoàn thành, giao diện làm việc chính của JCIA-VT sẽ hiển thị khi người dùng chọn một trong các dự án tại danh sách được hiển thị như trên hình \ref{fig:history_screen}. Giao diện làm việc chính của JCIA-VT bao gồm nhiều màn hình khác nhau.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.25]{images/main_screen}
+	\caption{Giao diện chính và danh sách tính năng của JCIA-VT}
+	\label{fig:main_screen}
+\end{figure}\\
+Mỗi màn hình đại diện cho một tính năng \textit{Dependency view} là mành hình mặc định trong giao diện làm việc, những màn hình làm việc còn lại được cung cấp tại danh mục tùy chọn, thể hiện như trong Hình \ref{fig:main_screen}\\\\
+Tiếp theo, từ màn hình chính tại danh mục tình năng, ta lựa chọn \textit{Design Pattern} để chuyển tới màn hình làm việc của tính năng \textit{Kiểm tra sự tuân thủ mẫu thiết kế bên trong mã nguồn}. Hình \ref{fig:design_pattern_workspace} mô tả màn hình làm việc của tính năng \textit{Kiểm tra sự tuân thủ mẫu thiết kế}
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.34]{images/design_pattern_workspace}
+	\caption{Màn hình tính năng kiểm tra sự tuân thủ mã nguồn}
+	\label{fig:design_pattern_workspace}
+\end{figure}\\
+Bao gồm, danh sách mẫu thiết kế được sử dụng trong mã nguồn dự án mà công cụ phát hiện được, đồ thị phụ thuộc của mã nguồn dự án. Trong đó, phần màu xanh của đồ thị là phần của một mẫu thiết kế mà công cụ phát hiện mã nguồn có sử dụng mẫu thiết kế đó, phần màu đỏ thể hiện phần mã nguồn liên quan tới mẫu thiết kế đó, tức là khi mau thiết kế thay đổi thì sẽ ảnh hưởng tới phần mã nguồn màu đỏ
+\section{Thực nghiệm}
+Trong phần này của khóa luận, sẽ tiến hành thực nghiệm công cụ đã được xây dựng. Tập dữ liệu thử nghiệm bao gồm mã nguồn có triển khai những mẫu thiết kế hướng đối tượng được sử dụng phổ biết như Abstract Factory, Composite, Bridge, Adapter, Proxy v.v.
+Ta sẽ trình bày một số ví dụ đã được sử dụng để tiến hành thực nghiệm trong quá trình xây dựng công cụ.\\\\
+\textbf{Ví dụ 1}: Ví dụ này sẽ tiến hành thực nghiệm dựa trên mã nguồn dự án sử dụng Java đã được yêu cầu sử dụng ba mẫu thiết kế là Abstract Factory, Bridge, Command trong quá trình phát triển dự án.
+Đầu tiên ta cần chuẩn bị dữ liệu là những mẫu thiết kế được yêu cầu sử dụng trong mã nguồn dự án đã được. Hình 
+\ref{fig:class_diagram_abstract_factory} thể hiện sợ đồ lớp của mẫu thiết kế Abstract Factory, ta tiến hành triển khai mẫu thiết kế này dưới dạng mã nguồn Java sau đó tải lên cơ sở dữ liệu của công cụ.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=1]{images/abstract_factory}
+	\caption{Sơ đồ lớp của mẫu thiết kế Abstract Factory}
+	\label{fig:class_diagram_abstract_factory}
+\end{figure}\\
+Thực hiện tương tự với hai mẫu thiết kế Bridge và Command. Tiếp theo ta tiến hành phân tích và kiểm tra sự tuân thủ về mẫu thiết kế của mã nguồn dự án. 
 
 
 \chapter{Kết luận}
