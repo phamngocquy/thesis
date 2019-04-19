@@ -538,17 +538,52 @@ Trong chương này, khóa luận sẽ trình bày về kiến trúc và cách c
 
 \newpage
 \section{Kiến trúc và cài đặt công cụ}
-Ở phần này sẽ trình bày về kiến trúc của bộ công cụ JCIA-VT và trình bày chi tiết về những mô-đun mà khóa luận này thực hiện. Kiến trúc của JCIA-VT được mô tả trong Hình 4.1:
-
+\subsection{Tổng quan bộ công cụ JCIA-VT}
+Ở phần này sẽ trình bày về kiến trúc của bộ công cụ JCIA-VT. Kiến trúc của JCIA-VT được mô tả trong Hình 4.1. JCIA-VT được xây dựng dưới dạng một ứng dụng Web dựa trên hai Framework Java là Spring và JavaServer Faces (JSF) bao gồm các mô-đun chính:\\\\ 
+\textbf{Preprocessor}: Mô-đun này chịu trách nhiệm nhận dạng loại dữ liệu đầu vào, bao gồm các mô-đun nhỏ đảm nhận các chức năng như nhận dạng nền tảng, công nghệ mà dự án sử dụng, ví dụ như: Java Spring, Java Strust, C$\#$, v.v. Đầu vào là mã nguồn dự án dưới dạng tệp tin nén. Mã nguồn dự án sẽ được giải nén, dựa vào các mô-đun \textit{Language Detector}, \textit{Frameword Detector}, \textit{Configuration Detector} bằng các phân tích những tập tin cấu hình, tập tin mã nguồn để nhận dạng loại ngôn ngữ, công nghệ mà dự án sử dụng.\\\\
+\noindent \textbf{Parser}: Mô-đun này nhận đầu vào là toàn bộ mã nguồn dự án. Mã nguồn sẽ được phân tích, mỗi mô-đun nhỏ phụ trách việc phân tích đối với từng loại mã nguồn khác nhau. Ngoài ra, cấu trúc dữ liệu được xây dựng cũng phụ thuộc vào từng loại công nghệ, mã nguồn là được tiến hành xây dựng. Ví dụ: đối với dự án sự dụng mã nguồn Java, cây cấu trúc sẽ được xây dựng.\\\\
+\noindent \textbf{Dependency Analyzer}:Bao gồm nhiều mô-đun nhỏ phụ trách phân tích phụ thuộc cho từng loại ngôn ngữ, công nghệ. Đầu vào là mã nguồn đã được phân tích từ mô-đun \textit{Parser}, tùy vào mỗi công nghệ, ngôn ngữ mà dự án sử dụng mà mô-đun nào sẽ được gọi tới. Ví dụ: đối với dự án Java, mô-đun \textit{Java Dependency Analyzer} sẽ được gọi tới, tiến hành phân tích các phụ thuộc tồn tại bên trong mã nguồn trả về \textit{cây phụ thuộc}.\\\\
+\noindent \textbf{Change Impact Analyzer}: Là mô-đun phân tích thay đổi cho mã nguồn, đầu vào là một tập thay đổi, đầu ta là tập mã nguồn sẽ bị ảnh hưởng. Đây là một trong những mô-đun đảm nhiệm chức năng chính cho JCIA-VT. Quá trình phân tích ảnh hưởng được thực hiện dựa trên giải thuật WAVE-CIA.\\\\
+\noindent \textbf{Supporting Service Analyzer}: Ngoài chức năng \textit{Phân tích ảnh hưởng}, JCIA-VT còn cung cấp thêm nhiều tính năng, phục vụ cho quá trình kiểm thử hồi quy (Regession Testing Tools). Bao gồm các mô-đun cung cấp các tính năng như: phân tích luồng dữ liệu (Data Flow Diagram Analyzer), phát hiện sự tuân thủ mẫu thiết kế (Detect Design Pattern), phân tích độ phức tạp của mã nguồ ( Cyclomatic Analyzer) .v.v.\\
+\textbf{Visualyzer}: Mô-đun thể hiện đầu ra của mã của những tính năng từ JCIA-VT 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.2]{images/architexture}
-	\caption{Tổng quan kiến trúc JCIA-VT // vẽ lại}
+	\caption{Tổng quan kiến trúc JCIA-VT}
 	\label{fig:architexture}
+\end{figure}
+\subsection{Kiến trúc chi tiết của công cụ kiểm tra sự tuân tủ mẫu thiết kế bên trong mã nguồn}
+Phần này sẽ trình bày chi tiết về kiến trúc chi tiết của mô-đun kiểm tra sự tuân thủ mã nguồn trong bộ công cụ JCIA-VT. Mô-đun có kiến trúc chi tiết được mô tả như trong hình \ref{fig:detect_design_pattern_architexture}, kiến trúc này được thiết kế dựa trên phương pháp đã mô tả ở phần 3 của khóa luận. Bao gồm bốn thành phần chính:
+\begin{figure}[!htbp]
+	\centering
+	\includegraphics[scale=0.35]{images/c4_architexture}
+	\caption{Kiến trúc }
+	\label{fig:detect_design_pattern_architexture}
+\end{figure}\\
+\noindent \textbf{Java Design Pattern Analyzer}: Là thanh phần chịu trách nhiệm phân tích mã nguồn. Đầu vào là mã nguồn Java, đầu ra là đồ thị phụ thuộc của mã nguồn. Mã nguồn sẽ được phân tích và tiến hành xây dựng đồ thị phụ thuộc như đã trình bày ở chưởng 3.  Phần này gồm các gói chính:
+\begin{itemize}
+	\item \textit{ddp.dom}: Định cấu trúc các nút trên cây cấu của mã nguồn
+	\item \textit{ddp.parser}: Phân tích mã nguỗn, xây dựng cây cấu trúc từ mã nguồn
+	\item \textit{ddp.analyzer}: Phân tích cây cấu trúc, thực hiện gắn phụ thuộc giữa các nút trên cây. Những phụ thuộc cần phân tích đã được định nghĩa tại chương 3 mục 3.3.
+	\item \textit{ddp.graph}: Xây dựng đồ thị phụ thuộc, với đầu vào là cây cấu trúc của mã nguồn dự án.
+\end{itemize}
+\noindent \textbf{Database}: Quản lý việc lưu trữ cây cấu trúc của mã nguồn cũng như những mẫu thiết kế đã được định nghĩa của dự án. Sự dụng hệ quản trị cơ sở dữ liệu H2.\\\\
+\noindent \textbf{Detecting Design Pattern}: Chịu trách nhiệm kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Sử dụng giải thuật VF2 như đã được trình bày tại chương 3 mục 3.4. Với đầu vào là cây cấu trúc của mã nguồn cùng với cây cấu trúc của mẫu thiết kế đã được định nghĩa.\\\\
+\noindent \textbf{Visualizer}: Cung cấp giao diện thể hiện kết quả của quá trình kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Kết quả thể hiện dưới dạng đồ thị được triển khai bằng Javascript dựa trên thư việc Visjs \footnote{http://visjs.org/}.
+\newpage
+\section{Triển khai và thử nghiệm}
+Hiện tại công cụ đã được phát triển và đặt, trên một phiên bản mới của JCIA-VT. Cung cấp những giao diện và tính năng mới liên quan tới việc kiểm tra sự tuân thủ của mẫu thiết kế bên trong mã nguồn.
+\subsection{Giao diện tải nên mẫu thiết kế}
+Sau khi đăng nhập thành công vào hệ thống, để có thể tiến hành phân tích, kiểm tra sự tuân thủ mẫu thiết kế bên trong mã nguồn. Người dùng cần tải lên những mẫu thiết kế đã được định nghĩa trước mà dự án sẽ được yêu cầu phát triển dựa trên những mẫu thiết kế đó. Mẫu thiết kế tải nên, nên chỉ tồn tại những tập tin Java và cần được đóng gói thành tập tin nén. Hình \ref{fig:ds_upload_example} mô tả màn hình tải nên một mẫu thiết kế mới.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.4]{images/ds_upload_example}
+	\caption{Màn hình tải lên mẫu thiết kế}
+	\label{fig:ds_upload_example}
 \end{figure}
 
 
-
+\chapter{Kết luận}
 \begin{thebibliography}{9}
 	\section*{Tiếng Việt}
 	\section*{Tiếng Anh}
