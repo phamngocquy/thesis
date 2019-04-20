@@ -3,24 +3,32 @@
 \BOOKMARK [0][-]{chapter*.2}{Danh s\341ch h\354nh ve}{}% 3
 \BOOKMARK [0][-]{chapter.1}{\320t vn }{}% 4
 \BOOKMARK [0][-]{chapter.2}{Kin thc c s}{}% 5
-\BOOKMARK [0][-]{chapter.3}{Phng ph\341p kim tra s tu\342n thu mu thit k cho d \341n s dung Java}{}% 6
-\BOOKMARK [1][-]{section.3.1}{Tng quan phng ph\341p}{chapter.3}% 7
-\BOOKMARK [1][-]{section.3.2}{Tin x l\375 m\343 ngun Java}{chapter.3}% 8
-\BOOKMARK [2][-]{subsection.3.2.1}{X\342y dng c\342y cu tr\372c}{section.3.2}% 9
-\BOOKMARK [2][-]{subsection.3.2.2}{X\341c inh thuc t\355nh cho mi n\372t tr\352n c\342y cu tr\372c}{section.3.2}% 10
-\BOOKMARK [1][-]{section.3.3}{Ph\342n t\355ch cu tr\372c m\343 ngun Java}{chapter.3}% 11
-\BOOKMARK [2][-]{subsection.3.3.1}{Ph\342n t\355ch phu thuc gia c\341c th\340nh phn trong m\343 ngun}{section.3.3}% 12
-\BOOKMARK [2][-]{subsection.3.3.2}{X\342y dng \040thi phu thuc t c\342y cu tr\372c}{section.3.3}% 13
-\BOOKMARK [2][-]{subsection.3.3.3}{V\355 du minh hoa}{section.3.3}% 14
-\BOOKMARK [1][-]{section.3.4}{Kim tra s tu\342n thu mu thit k b\352n trong m\343 ngun}{chapter.3}% 15
-\BOOKMARK [2][-]{subsection.3.4.1}{X\342y dng \040thi u v\340o cho giai thut VF2}{section.3.4}% 16
-\BOOKMARK [2][-]{subsection.3.4.2}{Kim tra s tu\342n thu mu thit k}{section.3.4}% 17
-\BOOKMARK [0][-]{chapter.4}{C\364ng cu v\340 thc nghim}{}% 18
-\BOOKMARK [1][-]{section.4.1}{Kin tr\372c v\340 c\340i t c\364ng cu}{chapter.4}% 19
-\BOOKMARK [2][-]{subsection.4.1.1}{Tng quan b c\364ng cu JCIA-VT}{section.4.1}% 20
-\BOOKMARK [2][-]{subsection.4.1.2}{Kin tr\372c v\340 c\340i t c\364ng cu kim tra s tu\342n thu mu thit k b\352n trong m\343 ngun}{section.4.1}% 21
-\BOOKMARK [1][-]{section.4.2}{Trin khai}{chapter.4}% 22
-\BOOKMARK [2][-]{subsection.4.2.1}{Giao din tai n\352n mu thit k}{section.4.2}% 23
-\BOOKMARK [2][-]{subsection.4.2.2}{Giao din ph\341t hin mu thit k b\352n trong m\343 ngun}{section.4.2}% 24
-\BOOKMARK [1][-]{section.4.3}{Thc nghim}{chapter.4}% 25
-\BOOKMARK [0][-]{chapter.5}{Kt lun}{}% 26
+\BOOKMARK [1][-]{section.2.1}{\320am bao cht lng m\343 ngun}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Mu thit k}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{Kim tra s tu\342n thu mu thit k}{chapter.2}% 8
+\BOOKMARK [2][-]{subsection.2.3.1}{C\341c phng ph\341p kim tra s tu\342n thu mu thit k}{section.2.3}% 9
+\BOOKMARK [2][-]{subsection.2.3.2}{Tng quan quy tr\354nh kim tra s tu\342n thu mu thit k}{section.2.3}% 10
+\BOOKMARK [1][-]{section.2.4}{B c\364ng cu JCIA-VT}{chapter.2}% 11
+\BOOKMARK [1][-]{section.2.5}{C\364ng cu ph\342n t\355ch Java}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.5.1}{S dung JP \040h tr ph\342n t\355ch m\343 ngun Java}{section.2.5}% 13
+\BOOKMARK [0][-]{chapter.3}{Phng ph\341p kim tra s tu\342n thu mu thit k cho d \341n s dung Java}{}% 14
+\BOOKMARK [1][-]{section.3.1}{Tng quan phng ph\341p}{chapter.3}% 15
+\BOOKMARK [1][-]{section.3.2}{Tin x l\375 m\343 ngun Java}{chapter.3}% 16
+\BOOKMARK [2][-]{subsection.3.2.1}{X\342y dng c\342y cu tr\372c}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.2}{X\341c inh thuc t\355nh cho mi n\372t tr\352n c\342y cu tr\372c}{section.3.2}% 18
+\BOOKMARK [1][-]{section.3.3}{Ph\342n t\355ch cu tr\372c m\343 ngun Java}{chapter.3}% 19
+\BOOKMARK [2][-]{subsection.3.3.1}{Ph\342n t\355ch phu thuc gia c\341c th\340nh phn trong m\343 ngun}{section.3.3}% 20
+\BOOKMARK [2][-]{subsection.3.3.2}{X\342y dng \040thi phu thuc t c\342y cu tr\372c}{section.3.3}% 21
+\BOOKMARK [2][-]{subsection.3.3.3}{V\355 du minh hoa}{section.3.3}% 22
+\BOOKMARK [1][-]{section.3.4}{Kim tra s tu\342n thu mu thit k b\352n trong m\343 ngun}{chapter.3}% 23
+\BOOKMARK [2][-]{subsection.3.4.1}{X\342y dng \040thi u v\340o cho giai thut VF2}{section.3.4}% 24
+\BOOKMARK [2][-]{subsection.3.4.2}{Kim tra s tu\342n thu mu thit k}{section.3.4}% 25
+\BOOKMARK [0][-]{chapter.4}{C\364ng cu v\340 thc nghim}{}% 26
+\BOOKMARK [1][-]{section.4.1}{Kin tr\372c v\340 c\340i t c\364ng cu}{chapter.4}% 27
+\BOOKMARK [2][-]{subsection.4.1.1}{Tng quan b c\364ng cu JCIA-VT}{section.4.1}% 28
+\BOOKMARK [2][-]{subsection.4.1.2}{Kin tr\372c v\340 c\340i t c\364ng cu kim tra s tu\342n thu mu thit k b\352n trong m\343 ngun}{section.4.1}% 29
+\BOOKMARK [1][-]{section.4.2}{Trin khai}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.2.1}{Giao din tai n\352n mu thit k}{section.4.2}% 31
+\BOOKMARK [2][-]{subsection.4.2.2}{Giao din ph\341t hin mu thit k b\352n trong m\343 ngun}{section.4.2}% 32
+\BOOKMARK [1][-]{section.4.3}{Thc nghim}{chapter.4}% 33
+\BOOKMARK [0][-]{chapter.5}{Kt lun}{}% 34
