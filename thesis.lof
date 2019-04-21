@@ -7,7 +7,7 @@
 \contentsline {figure}{\numberline {3.2}{\ignorespaces X\IeC {\^a}y d\IeC {\d \uhorn }ng c\IeC {\^a}y c\IeC {\'\acircumflex }u tr\IeC {\'u}c t\IeC {\`\uhorn } m\IeC {\~a} ngu\IeC {\`\ocircumflex }n}}{11}{figure.3.2}
 \contentsline {figure}{\numberline {3.3}{\ignorespaces Ph\IeC {\d u} thu\IeC {\d \ocircumflex }c th\IeC {\`\uhorn }a k\IeC {\'\ecircumflex } c\IeC {\h u}a l\IeC {\'\ohorn }p}}{12}{figure.3.3}
 \contentsline {figure}{\numberline {3.4}{\ignorespaces C\IeC {\'a}c th\IeC {\`a}nh ph\IeC {\`\acircumflex }n c\IeC {\ohorn } b\IeC {\h a}n trong class}}{13}{figure.3.4}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Abstract syntax tree \IeC {\dj }\IeC {\'\ocircumflex }i v\IeC {\'\ohorn }i Java class}}{14}{figure.3.5}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Abstract Syntax Tree \IeC {\dj }\IeC {\'\ocircumflex }i v\IeC {\'\ohorn }i Java class}}{14}{figure.3.5}
 \contentsline {figure}{\numberline {3.6}{\ignorespaces M\IeC {\'\ocircumflex }i quan h\IeC {\d \ecircumflex } gi\IeC {\~\uhorn }a m\IeC {\d \ocircumflex }t Class v\IeC {\'\ohorn } m\IeC {\d \ocircumflex }t Interface qua ph\IeC {\uhorn }\IeC {\ohorn }ng th\IeC {\'\uhorn }c Implements}}{16}{figure.3.6}
 \contentsline {figure}{\numberline {3.7}{\ignorespaces M\IeC {\'\ocircumflex }i quan h\IeC {\d \ecircumflex } gi\IeC {\~\uhorn }a m\IeC {\d \ocircumflex }t Class v\IeC {\'\ohorn }i m\IeC {\d \ocircumflex }t Class qua ph\IeC {\uhorn }\IeC {\ohorn }ng th\IeC {\'\uhorn }c extends}}{16}{figure.3.7}
 \contentsline {figure}{\numberline {3.8}{\ignorespaces M\IeC {\'\ocircumflex }i quan h\IeC {\d \ecircumflex } gi\IeC {\~\uhorn }a m\IeC {\d \ocircumflex }t Class v\IeC {\'\ohorn }i m\IeC {\d \ocircumflex }t Interface qua ph\IeC {\uhorn }\IeC {\ohorn }ng th\IeC {\'\uhorn }c Implements}}{17}{figure.3.8}
@@ -22,6 +22,8 @@
 \contentsline {figure}{\numberline {4.5}{\ignorespaces Giao di\IeC {\d \ecircumflex }n m\IeC {\`a}n h\IeC {\`\i }nh l\IeC {\d i}ch s\IeC {\h \uhorn }}}{34}{figure.4.5}
 \contentsline {figure}{\numberline {4.6}{\ignorespaces Giao di\IeC {\d \ecircumflex }n ch\IeC {\'\i }nh v\IeC {\`a} danh s\IeC {\'a}ch t\IeC {\'\i }nh n\IeC {\u a}ng c\IeC {\h u}a JCIA-VT}}{34}{figure.4.6}
 \contentsline {figure}{\numberline {4.7}{\ignorespaces M\IeC {\`a}n h\IeC {\`\i }nh t\IeC {\'\i }nh n\IeC {\u a}ng ki\IeC {\h \ecircumflex }m tra s\IeC {\d \uhorn } tu\IeC {\^a}n th\IeC {\h u} m\IeC {\~a} ngu\IeC {\`\ocircumflex }n}}{35}{figure.4.7}
-\contentsline {figure}{\numberline {4.8}{\ignorespaces S\IeC {\ohorn } \IeC {\dj }\IeC {\`\ocircumflex } l\IeC {\'\ohorn }p c\IeC {\h u}a m\IeC {\~\acircumflex }u thi\IeC {\'\ecircumflex }t k\IeC {\'\ecircumflex } Abstract Factory}}{36}{figure.4.8}
+\contentsline {figure}{\numberline {4.8}{\ignorespaces Abstract Factory Class Diagram cho v\IeC {\'\i } d\IeC {\d u} 1}}{36}{figure.4.8}
+\contentsline {figure}{\numberline {4.9}{\ignorespaces K\IeC {\'\ecircumflex }t qu\IeC {\h a} ph\IeC {\^a}n t\IeC {\'\i }ch v\IeC {\'\i } d\IeC {\d u} 1}}{38}{figure.4.9}
+\contentsline {figure}{\numberline {4.10}{\ignorespaces Abstract Factory Diagram cho v\IeC {\'\i } d\IeC {\d u} 2}}{39}{figure.4.10}
 \addvspace {10\p@ }
 \contentsfinish 
