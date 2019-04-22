@@ -132,7 +132,7 @@
 	{\Large  \bfseries Pham Ngoc Quy}\\[2cm]		
 	{ \LARGE \bfseries BUILDING TOOL FOR DETECTING}\\[0.2cm]
 	{ \LARGE \bfseries 	DESIGN PATTERN ADHERENCE OF}\\[0.2cm]
-	{\LARGE \bfseries 	JAVA PROJECTS}\\[0.2cm]
+	{\LARGE \bfseries 	JAVA PROJECTS}\\[0.2 cm]
 	
 	\hfill\\[1.5cm]
 	{\large \bfseries BACHELOR'S THESIS}\\	
@@ -228,7 +228,7 @@ Trong khí đó, các hoạt động bảo trì và nâng cấp diễn ra thư�
 
 \noindent Một trong những khía cạnh quan trọng của đảm bảo chất lượng mã nguồn, đó là việc áp dụng những mẫu thiết kế trong mã nguồn dự án. Mẫu thiết kế là tập các luật nhằm giải quyết các vấn đề liên quan tới thiết kế trong mã nguồn ứng dụng. Áp dụng mẫu thiết kế đem lại khả năng tái sử dụng mã nguồn cao, người phát triển có cái nhìn tổng quan về mã nguồn ứng dụng, dễ dàng năm bắt mã nguồn đối với những nhà phát triển tham gia vào dự án.
 
-\noindent Mặt khác, trong ngữ cảnh mà việc bảo trì nâng cấp ứng dụng ra thường xuyên, tài liệu đặc tả hầu như chỉ có mã nguồn ứng dụng, chi phí cho việc đảm bảo chất lượng ứng dụng quá lớn và đòi hỏi nhiều thời gian. Hoạt động bảo chất lượng mã nguồn nói chung và hoạt động đảm sự nhất quán của mã nguồn so đặc tả và thiết kế ban đầu về mẫu thiết kế (Design Patterns), chuẩn viết mã (Coding conventions) nói riêng là rất khó khăn.
+\noindent Mặt khác, trong ngữ cảnh mà việc bảo trì nâng cấp ứng dụng ra thường xuyên, tài liệu đặc tả hầu như chỉ có mã nguồn ứng dụng, chi phí cho việc đảm bảo chất lượng ứng dụng quá lớn và đòi hỏi nhiều thời gian. Hoạt động bảo chất lượng mã nguồn nói chung và hoạt động đảm sự nhất quán của mã nguồn so đặc tả và thiết kế ban đầu về mẫu thiết kế \cite{go4} (Design Patterns), chuẩn viết mã (Coding conventions) nói riêng là rất khó khăn.
 
 \noindent Phát hiện sự tuân thủ mẫu thiết kế trong mã nguồn được xem là giải pháp có thể giải quyết phần nào vấn đề đảm bảo chất lượng mã nguồn như đã đề cập ở trên. Đối với những nhà phát triển đây là giải pháp giúp họ nắm bắt được tổng quan thiết kế mã nguồn, kiểm tra sự nhất quán giữa mã nguồn so với đặc tả và thiết kế ban đầu, giúp những nhà phát triển mới nhanh chóng hiểu-nắm bắt được dự án.
 
@@ -295,13 +295,16 @@ Hơn thế nữa, JP cũng cung cấp các API để ta thực hiện truy vấn
 	\item \texttt{public void visit(MethodDeclaration n, Void arg)}: Duyệt tới từng phương thức của một lớp, tại đây những đối tượng thể hiện cho phương cũng cung cấp các API để truy cập tới thành phần nhỏ hơn trong phương thức như tên phương thức, kiểu trả về, v.v.
 	\item \texttt{public void visit(ClassOrInterfaceDeclaration n, Void arg)}: Duyệt tới một lớp, đồng thời đối tượng đại diện cho lớp sẽ cung cấp các phương thức truy cập tới kiểu lớp, tên, tính đóng gói.
 \end{itemize}
-\chapter{Phương pháp kiểm tra sự tuân thủ mẫu thiết kế cho dự án sử dụng Java}\noindent Mẫu thiết kế là tập hợp các luật nhằm mô tả cách giải quyết một vấn đề trong thiết kế có thể là vấn đề lặp lại nhiều lần trong dự án, là một khía cạnh của việc đảm bảo chất lượng mã nguồn, với những dự án công nghệ thông tin nói chung và dự án Java nói riêng. Ở các mẫu thiết kế hướng đối tượng, tập hợp các luật về thiết kế đem lại sự tương tác chặt chẽ giữa các thành phần trong mã nguồn với nhau. Những tương tác này có thể tổng quát hóa thành những dạng phụ thuộc nhất định. Đưa ra góc nhìn của mã nguồn về mặt cấu trúc. Do đó, phương pháp phát hiện sự tuân thủ mẫu thiết kế bên trong mã nguồn mà khóa luận này đễ xuất, đi theo hướng phân tích cấu trúc của mã nguồn.\\
+\chapter{Phương pháp kiểm tra sự tuân thủ mẫu thiết kế cho dự án sử dụng Java}\noindent Mẫu thiết kế là tập hợp các luật nhằm mô tả cách giải quyết một vấn đề trong thiết kế có thể là vấn đề lặp lại nhiều lần trong dự án, là một khía cạnh của việc đảm bảo chất lượng mã nguồn, với những dự án công nghệ thông tin nói chung và dự án Java nói riêng. Ở các mẫu thiết kế hướng đối tượng, tập hợp các luật về thiết kế đem lại sự tương tác chặt chẽ giữa các thành phần trong mã nguồn với nhau. Những tương tác này có thể tổng quát hóa thành những dạng phụ thuộc nhất định. Đưa ra góc nhìn về mặt cấu trúc của mã nguồn. Do đó, phương pháp phát hiện sự tuân thủ mẫu thiết kế cho các dự án sử dụng Java mà khóa luận này đễ xuất, sẽ đi theo hướng phân tích cấu trúc của mã nguồn.
+
 \section{Tổng quan phương pháp}
-Phương pháp phân tích cấu trúc sẽ dựa trên phấn tích tĩnh mã nguồn, việc phân tích mã nguồn tĩnh đem lại độ chính xác tốt và quá trình phân tích không bắt buộc mã nguồn có thể thực thi được. Đem lại sự linh hoạt cho phương pháp này, dữ liệu đầu vào có thể là toàn bộ mã nguồn hoặc bất cứ một hay nhiều thành phần của mã nguồn.\\\\
-Hình \ref{fig:general_architecture} mô tả phương pháp kiểm tra sự tuân thủ mẫu thiết kế. Đầu tiên, dữ liệu đầu vào được tiền xử lý thành cây cấu trúc, thông qua cây cấu trúc tiến hành phân tích phụ thuộc bên trong mã nguồn, xây dựng đồ thị phụ thuộc. Quá trình này được thực hiện với cả mã nguồn dự án và mã nguồn của những mấu thiết kế được qui định, từ đó tìm ra sự tương đồng của mẫu thiết kế bên trong mã nguồn dự án. Nhằm kiểm tra được sự tuân thủ về mẫu thiết kế bên trong mã nguồn.
+Phương pháp mà khóa luận đề xuất, dựa trên hoạt động phân tích mã nguồn tĩnh của dự án. Ưu điểm của phương pháp phân tích này đó là đầu vào của phương pháp không nhất thiết là toàn bộ mã nguồn, có thể là một phần của mã nguồn dự án, việc phân tích mã nguồn tĩnh đem lại sự linh hoạt và đơn giản trong quá trình phân tích. Cụ thể, khóa luận sẽ dựa trên phân tích tĩnh cấu trúc mã nguồn để tiền xử lý đầu vào và tiếp cận bài toán kiểm tra sự tuân thủ mẫu thiết kế theo hướng đồ thị.
+Đầu vào của phương pháp sẽ là mã nguồn, mã nguồn sẽ được tiến hành tiền xử lý và xây dựng cây cấu trúc, cây cấu trúc tiếp tục được phân tích để xác định phụ thuộc giữa các thành phần trên cây. Từ cây cấu trúc với những phụ thuộc đã xác định được, một đồ thị phụ thuộc sẽ được xây dựng từ cây cấu trúc. Đồ thị phụ thuộc sẽ là đầu vào cho hoạt động kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Từ đó, đưa ra kết luận về sự tuân thủ đầy đủ mẫu thiết kế của mã nguồn so với đặc tả ban đầu.
+
+\noindent Hình \ref{fig:general_architecture} mô tả phương pháp kiểm tra sự tuân thủ mẫu thiết kế. Đầu tiên, dữ liệu đầu vào được tiền xử lý thành cây cấu trúc, thông qua cây cấu trúc tiến hành phân tích phụ thuộc bên trong mã nguồn, xây dựng đồ thị phụ thuộc. Quá trình này được thực hiện với cả mã nguồn dự án và mã nguồn của những mấu thiết kế được qui định, từ đó tìm ra sự tương đồng của mẫu thiết kế bên trong mã nguồn dự án. Nhằm kiểm tra được sự tuân thủ về mẫu thiết kế bên trong mã nguồn.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=1.1]{images/general_architecture_3_1}
+	\includegraphics[scale=1.2]{images/general_architecture_3_1}
 	\caption{Quá trình kiểm tra sự tuân thủ mẫu thiết kế của mã nguồn}
 	\label{fig:general_architecture}
 \end{figure}
@@ -354,6 +357,7 @@ Hình \ref{fig:class_structure} Các thành phần cơ bản của \textit{Class
 \noindent Bảng 3.1 mô tả đầy đủ những thông tin cần xác định cho mỗi loại nút trên cây cấu trúc, nhằm phục vụ cho việc phân tích cấu trúc mã nguồn và xây dựng đồ thị phụ thuộc sẽ được trình bài tại mục \textbf{3.2} và \textbf{3.3} của chương này.
 \begin{table}[!htbp]
 	\centering
+	\caption{Thuộc tính trên mỗi nút}
 	\renewcommand{\arraystretch}{0.8}
 	\begin{tabular}{|l|l|}
 		\hline
@@ -362,7 +366,6 @@ Hình \ref{fig:class_structure} Các thành phần cơ bản của \textit{Class
 		Method              & \begin{tabular}[c]{@{}l@{}}Name\\ NameReturn Type\\ Access modifier\\ Parameter\\ Body\end{tabular} \\ \hline
 		Field               &\begin{tabular}[c]{@{}l@{}}Name\\ Value type\\ Access modifier\end{tabular} \\ \hline
 	\end{tabular}
-	\caption{Thuộc tính trên mỗi nút}
 	\label{tbl:node_properties}
 \end{table}
 
@@ -401,8 +404,9 @@ Hình 3.5 mô tả một AST với một Class Java tương ứng. Trong đó m�
 	\includegraphics[scale=0.35]{images/D_extends_E}
 	\caption{Mối quan hệ giữa một Class với một Interface qua phương thức Implements}
 	\label{fig:D_extends_E}
-\end{figure}\\
-\textbf{Use Dependency}: Không giống với \textit{Inheritance Dependency} hay \textit{Polymorphism dependency}, Use Dependency thể hiện sự tương quan giữa các Class về mặt tương tác dữ liệu,khi các đối tượng của lớp này được sử dụng nhứ là thuộc tính, giá trị trả về, kiểu dữ liệu đầu vào, biến địa phương của phương thức của Class khác hoặc được sử dụng để khai kiểu cho một Generic Class.
+\end{figure}
+
+\noindent \textbf{Use Dependency}: Không giống với \textit{Inheritance Dependency} hay \textit{Polymorphism dependency}, Use Dependency thể hiện sự tương quan giữa các Class về mặt tương tác dữ liệu,khi các đối tượng của lớp này được sử dụng nhứ là thuộc tính, giá trị trả về, kiểu dữ liệu đầu vào, biến địa phương của phương thức của Class khác hoặc được sử dụng để khai kiểu cho một Generic Class.
 \noindent Hình \ref{fig:use_dependency} mô tả \textit{Use dependency}. Chia làm hai ví dụ nhỏ. Ví dụ thứ nhất, đối tượng của Class A được khai báo là thuộc tính của Class B, những phương thức của Class B có kiểu trả về, kiểu dữ liệu đầu vào là đối tượng của Class A. Ví dụ thứ hai, Class C khai bảo kiểu Generic, và định nghĩa những phương thức sử dụng kiểu Generic, tức là kiểu dữ liệu mà Class định nghĩa cho các phương thức, thuộc tính của nó sẽ phụ thuộc vào kiểu dữ liệu được khai báo khi Class được sử dụng.
 \begin{figure}[!htbp]
 	\centering
@@ -419,12 +423,13 @@ việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương
 Đối với phương pháp mà khóa luận này đề xuất, đồ thị phụ thuộc được xây dựng là đồ thị có hướng.\\
 \noindent \textbf{Đồ thị phụ thuộc} (\textit{Định nghĩa}): là một đồ thị có hướng $G = \{V,E \}$, trong đo $V = \{v_1,v_2,v_3..v_k\}$ là tập các đỉnh của đồ thị với mỗi đỉnh tương ứng với một Class trong mã nguồn, $E = \{ e_ie_j | e_i \in V, e_j \in V  \}$ là tập các cạnh đinh hướng của đồ thị từ đỉnh $e_i$ tới $e_j$. Trên mỗi cạnh nối hai đỉnh chứa thuộc tính thể hiện sự phụ thuộc giữa hai đỉnh (class) của đồ thị (mã nguồn).
 
-\noindent Từ việc phân tích các loại phụ thuộc phái trên, ta tiến hành định nghĩa một tập những phụ thuộc, được hiểu như là các cạnh của đồ thị phụ thuộc. Tập các đỉnh là những Class. Được kiệt kê tất cả trong Bảng 3.2 và Bảng 3.3 \cite{orucc2016}
+\noindent Từ việc phân tích các loại phụ thuộc phái trên, ta tiến hành định nghĩa một tập những phụ thuộc, được hiểu như là các cạnh của đồ thị phụ thuộc. Tập các đỉnh là những Class. Được kiệt kê tất cả trong Bảng 3.2 và Bảng 3.3 \cite{orucc2016}.
 \begin{table}[!htbp]
 	\centering
 	\caption{Các loại đỉnh của đồ thị phụ thuộc}
+	\vspace{0.2cm}
 	\label{tbl:java-class-type}
-	\renewcommand{\arraystretch}{0.7}
+	\renewcommand{\arraystretch}{0.8}
 	\begin{tabular}{|p{2.7cm}|p{8.7cm}|}
 		\hline
 		\textbf{Kí hiệu} & \textbf{Loại} \\ \hline
@@ -438,6 +443,7 @@ việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương
 \begin{table}[!htbp]
 	\centering
 	\caption{Các loại phụ thuộc Java}
+	\vspace{0.2cm}
 	\label{tbl:field-ct}
 	\renewcommand{\arraystretch}{0.9}
 	\begin{tabular}{|l|l|}
@@ -492,7 +498,8 @@ việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương
 		\Return $G$\;
 \end{thuattoan}
 \subsection{Ví dụ minh họa}
-\noindent Để hiểu rõ hơn về đồ thị phụ thuộc ta xem xét ví dụ Hình \ref{fig:example_graph_dependency}. Là độ thị phụ thuộc sinh ra từ một đoạn mã nguồn. Trong đó, đỉnh của đồ thị diểuiểu thị cho các lớp , \textbf{C} tương ứng với class và \textbf{I} tương ứng với Interface. Những class, interface này tương tác lẫn nhau qua những phụ thuộc như \textbf{MI} \textit{: class A has a method that has an input parameter with the type of Class B}, \textbf{ML} : \textit{class A has a method that defines a local variable with the type of class B}, v.v.\\
+\noindent Để hiểu rõ hơn về đồ thị phụ thuộc ta xem xét ví dụ Hình \ref{fig:example_graph_dependency}. Là độ thị phụ thuộc sinh ra từ một đoạn mã nguồn. Cụ thể, mã nguồn đầu vào sẽ được tiền xử lý và xây dựng cây cấu trúc, cây cấu trúc sẽ được phân tích nhằm xác định các phụ thuộc giữa các thành phần trong mã nguồn. Ta sẽ được một cây cấu trúc với nút gốc là các thành phần mã nguồn như class, method, v.v. cạnh giữa hai nút lá là tập các phụ thuộc giữa hai nút gốc. Từ cây cấu trúc đã có đầy đủ phụ thuộc giữa các thành phần mã nguồn, một đồ thị phụ thuộc sẽ được xây dựng. Đồ thị phụ thuộc sẽ có dạng như Hình \ref{fig:example_graph_dependency}.
+Trong đó, đỉnh của đồ thị biểu thị cho các lớp , \textbf{C} tương ứng với Class và \textbf{I} tương ứng với Interface. Những Class, interface này tương tác lẫn nhau qua những phụ thuộc như \textbf{MI} \textit{: class A has a method that has an input parameter with the type of Class B}, \textbf{ML} : \textit{class A has a method that defines a local variable with the type of class B}, v.v.\\
 \begin{figure}[!htbp]
 	\centering
 	\vspace{-1cm}
@@ -500,10 +507,9 @@ việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương
 	\caption{Ví dụ minh họa về đồ thị phụ thuộc}
 	\label{fig:example_graph_dependency}
 \end{figure}\\
-Đồ thị này là tiền đề đê kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn sẽ được trình bày ở phần sau.
-\pagebreak
+Đồ thị này là tiền đề cho hoạt động kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn sẽ được trình bày ở phần sau.
 \section{Kiểm tra sự tuân thủ mẫu thiết kế bên trong mã nguồn}
-Quá trình kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn, tức là kiểm tra sự tồn tại của một mẫu thiết kế bên trong mã nguồn. Đầu vào của phần này gồm hai thành phần. Thứ nhất, \textbf{đồ thị phụ thuộc} của mã nguồn dự án. Thứ hai, \textbf{đồ thị phụ thuộc} của những mẫu thiết kế. Ta sẽ đi tiến hành kiểm tra sự tồn tại của từng mẫu thiết kế bên trong mã nguồn. 
+Quá trình kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn, tức là kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Đầu vào của phần này gồm hai thành phần. Thứ nhất, \textbf{đồ thị phụ thuộc} của mã nguồn dự án. Thứ hai, \textbf{đồ thị phụ thuộc} của những mẫu thiết kế. Ta sẽ đi tiến hành kiểm tra sự tồn tại của từng mẫu thiết kế bên trong mã nguồn. 
 Đầu vào của bài toán sẽ là hai đồ thị có hướng. Bản chất của vấn đề sẽ là tìm kiếm sự tồn tại của một đồ thị bên trong một đồ thị khác. Đo đó, thuật toán tìm kiếm đồ thị đẳng cấu \textbf{VF2 algorithm for the Subgraph Isomorphism Problem} được đề xuất để giái quyết bài toán.
 
 
@@ -554,7 +560,8 @@ Quá trình kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn, t�
 \end{thuattoan}
 
 \subsection{Kiếm tra sự tuân thủ mẫu thiết kế}
-Như ý tưởng đã trình bày ở trên, việc kiểm tra sự tuân thủ mẫu thiết kế, trình là bài toán tìm kiếm đồ thị con-đẳng cấu giữa hai đồ thị phụ thuộc đại diện cho mã nguồn và mẫu thiết kế. Quá trình tìm kiếm đồ thị đẳng cấu là quá trình ánh xạ các cặp đỉnh từ hai đồ thị. Việc này tạo nên một không gian trạng thái của những đáp án đổi với mỗi trường hợp ánh xạ của mỗi cặp định khác nhau của hai đồ thị. Quá trình này được mô tả như Hình \ref{fig:vf2_example}.
+Như ý tưởng đã trình bày ở trên, việc kiểm tra sự tuân thủ mẫu thiết kế thực tế là quá trình kiểm tra sự tồn tại của những mẫu thiết kế mà được yêu cầu áp dụng trong mã nguồn theo đặc tả của dự án, những mẫu thiết kế này có tồn tại trong mã nguồn dự án hay không.
+Quá trình kiểm trá sự tồn tại của mẫu thiết kế trong mã nguồn chính là quá trình tìm kiếm đồ thị con-đẳng cấu giữa hai đồ thị phụ thuộc đại diện cho mã nguồn và mẫu thiết kế. Quá trình tìm kiếm đồ thị đẳng cấu là quá trình ánh xạ các cặp đỉnh từ hai đồ thị. Việc này tạo nên một không gian trạng thái của những đáp án đổi với mỗi trường hợp ánh xạ của mỗi cặp định khác nhau của hai đồ thị. Quá trình này được mô tả như Hình \ref{fig:vf2_example}.
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[scale=0.7]{images/_vf2_example.pdf}
@@ -590,7 +597,7 @@ Trong đó $F_{syn}$ là tập các luật đánh giá trạng thái dựa trên
 	\end{itemize} 
 \end{enumerate}
 \newpage
-\noindent Các bược của giải thuật VF2 \cite{vf2_1368} sẽ được trình bày chi tiết ở Thuật toán \ref{algo:VF2}.
+\noindent Các bược của giải thuật VF2 \cite{vf2_1368} sẽ được trình bày chi tiết ở Thuật toán \ref{algo:VF2}. Trong đó, ta có trạng thái ban đầu là tập $M(s_0) = \emptyset $ và trạng thái $s_0$. Trong mỗi vòng lặp tính toán, thuật toán sẽ lựa chọn cặp đỉnh dựa trên sự thỏa mãn  Feasibility Rules và Semantic Feasibility, mỗi một cặp định được thêm vào tập M sẽ chuyển trạng thái $s$ sang trạng thái $s'$. Nếu tập M chưa toàn bộ đỉnh của G2 tức là G2 đẳng cấu với một đồ thị con của G1, ngược lại G1 và G2 không tồn tại quan hệ đẳng cấu.
 \begin{thuattoan}[!htbp]
 	\label{algo:VF2}
 	\caption{$VF2$}
@@ -615,9 +622,11 @@ Trong đó $F_{syn}$ là tập các luật đánh giá trạng thái dựa trên
 	\hspace{10mm}Restore data structures\\
 	\hspace{5mm}END IF\\
 	END PROCEDURE Match
-\end{thuattoan}\\
-Nếu mẫu thiết kế có tồn tại trong mã nguồn, kết quả trả về sẽ là một tập ánh xạ giưa toàn bộ đỉnh của đồ thị từ mẫu thiết kế với các đỉnh tưởng ứng trên đồ thị của mã nguồn.\\
-Từ việc giải quyết được bài toán kiểm tra sự tuân thủ của mẫu thiết kế trong mã nguồn, chương tiếp theo khóa luận sẽ trình bày chi tiết cách triển khai phương pháp đã trình bày vào xây dựng công cụ trong thực tế.
+\end{thuattoan}
+
+\noindent Từ việc giải quyết được bài toán nhỏ kiểm tra sự tồn tại của mẫu thiết kế trong mã nguồn. Ta áp dụng vào hoạt động kiểm tra sự tuân thủ mẫ thiết kế trong mã nguồn dự án bằng cách kiểm tra sự tồn tại của toàn bộ mẫu thiết kế mà dự án yêu cầu từ đó đưa ra được kết quả về sự tuân thủ mẫu thiết kế của dự án. 
+
+\noindent Chương tiếp theo khóa luận sẽ trình bày chi tiết cách triển khai phương pháp đã trình bày vào xây dựng công cụ trong thực tế.
 \chapter{Công cụ và thực nghiệm}
 Trong chương này, khóa luận sẽ trình bày về kiến trúc và cách cài đặt của công cụ cho phương pháp đã được trình bày ở chương 3 bao gồm, kiến trúc tổng quan của bộ công cụ JCIA-VT, kiến trúc của công cụ \textit{Kiểm tra sư tuân thủ mẫu thiết kế bên trong mã nguồn} mà khóa luận đề xuất và xây dựng và tích hợp với bộ công cụ với JCIA-VT. Thêm vào đó, đưa ra một số thực nghiệm để tiến hành phân tích thử nghiệm và đánh giá công cụ.
 
@@ -683,14 +692,14 @@ Sau khi tiến hành tải lên những mẫu thiết kế được yêu cầu t
 Đầu tiên, mã nguồn sẽ được tiến hành tải nên, tại giao diện tại lên mã nguồn dự án như Hình \ref{fig:upload_project_source_code}. Cần thêm được dẫn tới thư mục chứa mã nguồn như trong giao diện mô tả.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.35]{images/upload_project}
+	\includegraphics[scale=0.4]{images/upload_project}
 	\caption{Giao diện tải lên mã nguồn dự án}
 	\label{fig:upload_project_source_code}
 \end{figure}\\
 Sau khi nhấn chọn \textit{Upload}, hệ thống chuyển tới giao diện lịch sử và đồng thời tiến hành phân tích mã nguồn dự án. Giao diện lịch sử sẽ được thể hiện như trong Hình \ref{fig:history_screen}. Bao gồm thông tin về quá trình phân tích mã nguồn, thông tin về mã nguồn của các dự án khác nhau.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.38]{images/history_screen}
+	\includegraphics[scale=0.4]{images/history_screen}
 	\caption{Giao diện màn hình lịch sử}
 	\label{fig:history_screen}
 \end{figure}\\
