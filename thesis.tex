@@ -131,7 +131,7 @@
 	
 	{\Large  \bfseries Pham Ngoc Quy}\\[2cm]		
 	{ \LARGE \bfseries BUILDING TOOL FOR DETECTING}\\[0.2cm]
-	{ \LARGE \bfseries 	DESIGN PATTERN ADHERENCE OF}\\[0.2cm]
+	{ \LARGE \bfseries 	DESIGN PATTERNS ADHERENCE OF}\\[0.2cm]
 	{\LARGE \bfseries 	JAVA PROJECTS}\\[0.2 cm]
 	
 	\hfill\\[1.5cm]
@@ -269,7 +269,7 @@ Tuy có nhiều phương pháp kiểm tra sự tuân thủ mẫu thiết kế đ
 Hình \ref{fig:ddp_process} mô tả qui trình kiểm tra sự tuân thủ mẫu thiết kế.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.9]{images/ddp}
+	\includegraphics[scale=1]{images/ddp}
 	\label{fig:ddp_process}
 	\caption{Quy trình kiểm tra sự tồn tại của mẫu thiết kế}
 \end{figure}
@@ -280,9 +280,9 @@ JCIA-VT \cite{jcia-vt} là bộ công cụ phân tích và đảm bảo chất l
 
 \noindent Hiện tại JCIA-VT triển khai dưới dạng ứng dụng Web trên nền trang Java Spring và JavaServer Faces. Công cụ này sẽ tiếp tục được bảo trì và phát triển thêm những tính năng nhằm tạo nên bộ công cụ hoàn chỉnh phụ vụ cho công tác phân tích và đảm bảo chất lương mã nguồn.
 \section{Công cụ phân tích Java}
-Công cụ phân tích Java (Java Parser - JP) \footnote{https://javaparser.org/} là bộ công cụ mã nguồn mở được chứng nhận bởi JetBrains \footnote{https://www.jetbrains.com/}. JP cung cấp các plug-in hỗ trợ \textit{parse}, \textit{analyze}, \textit{transform}, \textit{generate }đối với mã nguồn Java. Đồng thời JP cũng cung cấp các API, đo vậy ta hoàn toàn có thể sử dụng JP để hỗ trợ phát triển những công cụ khác. 
+Công cụ phân tích Java (Java Parser - JP) \footnote{https://javaparser.org/} là thư viện mã nguồn mở được chứng nhận bởi JetBrains \footnote{https://www.jetbrains.com/}. JP cung cấp các plug-in hỗ trợ \textit{parse}, \textit{analyze}, \textit{transform}, \textit{generate } đối với mã nguồn Java. Ngòai việc ra, JP cung cấp những API hỗ trợ phân tích mã nguồn. Người dùng hoàn toàn có thể sử dụng JP để phát triển những công cụ mới. Trong khóa luận này, JP sẽ được sử dụng để hỗ trợ quá trình tiền xử lý mã nguồn trong công cụ mà khóa luận sẽ xây dựng
 \subsection{Sử dụng JP để hỗ trợ phân tích mã nguồn Java}
-JP là thành phần được sử dụng để hỗ trợ trong quá trình tiền xử lý mã nguồn. Sử dụng JP để phân tích mã nguồn, ta sẽ nhận được đầu ra là cây cú pháp trừu tượng (Abstract Syntax Tree - AST) tương ứng.
+Sử dụng JP hoạt động mã nguồn, với đầu vào là mã nguồn đầu ra sẽ là cây cú pháp trừu tượng tượng ứng (Abstract Syntax Tree - AST) tương ứng với mã nguồn.
 \begin{lstlisting}[language=Java,
 caption={Sử dụng API của JS Core để tạo cây cú pháp trúc trừu tượng},label={code:jdt-ast-gen}]
 CompilationUnit compilationUnit = StaticJavaParser.parse("class A { }");
@@ -304,7 +304,7 @@ Phương pháp mà khóa luận đề xuất, dựa trên hoạt động phân t
 \noindent Hình \ref{fig:general_architecture} mô tả phương pháp kiểm tra sự tuân thủ mẫu thiết kế. Đầu tiên, dữ liệu đầu vào được tiền xử lý thành cây cấu trúc, thông qua cây cấu trúc tiến hành phân tích phụ thuộc bên trong mã nguồn, xây dựng đồ thị phụ thuộc. Quá trình này được thực hiện với cả mã nguồn dự án và mã nguồn của những mấu thiết kế được qui định, từ đó tìm ra sự tương đồng của mẫu thiết kế bên trong mã nguồn dự án. Nhằm kiểm tra được sự tuân thủ về mẫu thiết kế bên trong mã nguồn.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=1.2]{images/general_architecture_3_1}
+	\includegraphics[scale=1.1]{images/general_architecture_3_1}
 	\caption{Quá trình kiểm tra sự tuân thủ mẫu thiết kế của mã nguồn}
 	\label{fig:general_architecture}
 \end{figure}
@@ -324,20 +324,21 @@ Cây cấu trúc được xây dựng từ mã nguồn của dự án bằng cá
 	\label{fig:universe}
 \end{figure}
 \subsection{Xác định thuộc tính cho mỗi nút trên cây cấu trúc}
-Xác định thuộc tính trên mỗi nút, nhằm ánh xạ đầy đủ thông tin cần thiết của mã nguồn lên cây cấu trúc mà ta cần xây dựng. Phục vụ quá trình phân tích phụ của mã nguồn. Quá trình xác định thuộc tính trên mỗi nút dựa trên việc phân tích mã nguồn ở các mức trừu tượng khác nhau như Class, Method, Variable, v.v.
+Xác định thuộc tính trên mỗi nút, nhằm ánh xạ đầy đủ thông tin cần thiết của mã nguồn lên cây cấu trúc mà ta cần xây dựng. Phục vụ quá trình phân tích phụ của mã nguồn. Quá trình xác định thuộc tính trên mỗi nút dựa trên việc phân tích mã nguồn ở các mức trừu tượng khác nhau như \textit{Class, Method, Variable, v.v.}
 
-\noindent Thành phần của một lớp gồm bốn phần chính: \textit{Class type, Class dependency, Class variables, Method }. Trong đó:
+\noindent Trong khóa luận này xác định, thành phần của một lớp gồm bốn phần chính: \textit{Class type, Class dependency, Class variables, Method }. Trong đó:
 \vspace{-0.1cm}
 \begin{itemize}
-	\item \textit{Class type} của một nút (class) thể hiện nút đó đóng vai trò như một:\textit{ Class, Abstract class, Template class} hay \textit{Interface}.
-	\item \textit{Class depedency} ở đây  ta xét tới phụ thuộc thừa kế của lớp, phụ thuộc thừa kế bao gồm hai loại: kế thừa từ một class, kế thừa từ Interface.
-	\item \textit{Method} là định nghĩa một hành vi của lớp, \textit{Method} bao gồm các thành phần: \textit{Local variable, Return type, Input paramater}.
-	\item  \textit{Class variables} là biến của một lớp được khởi tạo bên ngoài các \textit{Method}. \textit{Local variable} là biến chỉ được khai báo và sử dụng trong phạm vi \textit{Method}.  
-	\item \textit{Return type} là kiểu dữ liệu mà phương thức sẽ trả về nếu \textit{Return type} là kiểu \textit{void} thì phương thức sẽ không trả về giá trị.
-	\item \textit{Input paramter} xác định kiểu giá trị đầu vào cho phương thức.
+	\item \textit{Class type}: thể hiện lớp đó đó đóng vai trò như một:\textit{ Class, Abstract class, Template class} hay \textit{Interface}.
+	\item \textit{Class depedency}: ở đây  ta xét tới phụ thuộc thừa kế của lớp, phụ thuộc thừa kế bao gồm hai loại: kế thừa từ một \textit{Class}, kế thừa từ \textit{Interface}.
+	\item \textit{Method}: là định nghĩa một hành vi của lớp, \textit{Method} bao gồm các thành phần: \textit{Local variable, Return type, Input paramater}.
+	\item  \textit{Class variables}: là biến của một lớp được khởi tạo bên ngoài các \textit{Method}. \textit{Local variable} là biến chỉ được khai báo và sử dụng trong phạm vi \textit{Method}.  
+	\item \textit{Return type}: là kiểu dữ liệu mà phương thức sẽ trả về nếu \textit{Return type} là kiểu \textit{void} thì phương thức sẽ không trả về giá trị.
+	\item \textit{Input paramter}: xác định kiểu giá trị đầu vào cho một \textit{Method}
 \end{itemize}
-Để rõ ràng hơn về quá trình xác định thuộc tính cho các nút của cây cấu trúc, ta tiến hành xem xét các ví dụ.
-Hình \ref{fig:dependecy_extend} mô tả hai loại phụ thuộc kế thừa qua phương thức extends và inplements. Trong đó A là một Class thừa kế từ B là một Interface qua phương thức extend, C là một class thừa kế D qua phương thức implement với D là một abstract class.\\\\
+Để rõ ràng hơn về quá trình xác định thuộc tính cho các nút của cây cấu trúc, ta tiến hành xem xét các ví dụ sau.
+
+\noindent Hình \ref{fig:dependecy_extend} mô tả hai loại phụ thuộc kế thừa qua phương thức \textit{Extends} và \textit{Implements}. Trong đó A là một Class thừa kế từ B là một \textit{Interface} qua phương thức \textit{Extends}, C là một class thừa kế D qua phương thức \textit{Implements} với D là một \textit{Abstract Class}. Do đó giữa các lớp A và B , C và D tồn tại phụ thuộc với nhau.\\
 \begin{figure}[!htbp]
 	\centering
 	\vspace{-1cm}
@@ -346,7 +347,8 @@ Hình \ref{fig:dependecy_extend} mô tả hai loại phụ thuộc kế thừa q
 	\label{fig:dependecy_extend}
 \end{figure}
 \\
-Hình \ref{fig:class_structure} Các thành phần cơ bản của \textit{Class}. Trong đó E là một Class với Access modifer là public, Class variable là sum với kiểu giá trị int và Access modifier là private, Method add() có kiểu trả về là int và hai biến đầu vào là a và b.\\
+Hình \ref{fig:class_structure} mô tả thành phần cơ bản của một \textit{Class}. Cụ thể, 
+\textit{Class} E bao gồm các thành phần, \textit{Access modifer} là public, \textit{Class variable} là `sum' với kiểu giá trị `int' và \textit{Access modifier} là private, \textit{Method} add() có kiểu trả về là `int' và hai biến đầu vào là `a' và `b'. Ngoài ra, nêu một lớp (Class) không định nghĩa gì thêm nó sẽ có hàm khởi tạo mặc định. Khi tạo một đối tượng mới, giá trị của nhưng \textit{Class Variable} sẽ không được khởi tạo.\\
 \begin{figure}[!htbp]
 	\centering
 	\includegraphics[scale=1.2]{images/class_method_structure.pdf}
@@ -369,9 +371,10 @@ Hình \ref{fig:class_structure} Các thành phần cơ bản của \textit{Class
 	\label{tbl:node_properties}
 \end{table}
 
-\noindent Việc trích xuất các thông tin từ mã nguồn cho các nút trên cây, được thực hiện thông qua AST. Với mỗi thành phần mã nguồn, ta sử dụng JP để sinh AST tương ứng với thành phần đó từ đó trích xuất các thuộc tính cần thiết cho mỗi nút trên cây cấu trúc.
+\noindent Việc trích xuất các thông tin từ mã nguồn cho các nút trên cây, được thực hiện thông qua AST. Với mỗi thành phần mã nguồn, ta sử dụng JP để sinh AST tương ứng với thành phần đó từ đó trích xuất các thuộc tính cần thiết cho mỗi nút trên cây cấu trúc thông qua những API mà JP cung cấp.
 Hình 3.5 mô tả một AST với một Class Java tương ứng. Trong đó một lớp Java được phân tách thành dạng cây với các nút gốc chứa các toán tử, các nút lá chứa các toán hạng. Ví dụ như return = 42, trong đó return là một toán tử ứng với `ReturnStatement' và `42' là toán hạng ứng với nút lá.
 \begin{figure}[!htbp]
+	\vspace{1cm}
 	\centering
 	\includegraphics[scale=1]{images/ast_pdf}
 	\caption{Abstract Syntax Tree đối với Java class}
@@ -383,16 +386,20 @@ Hình 3.5 mô tả một AST với một Class Java tương ứng. Trong đó m�
 \subsection{Phân tích phụ thuộc giữa các thành phần trong mã nguồn}
 Đối với phương pháp mà khóa luận này đề xuất, việc phân tích phụ thuộc giữa các thành phân bên trong mã nguồn xoay quanh việc phân tích phụ thuộc giữa các lớp trong mã nguồn. Đối với loại phụ thuộc giữa các lớp trong mã nguồn Java bao gồm: Direct \& Indirect dependency, Polymorphism dependency, Inheritance Dependency, Use Dependecy,Behavior Dependency. Chi tiết về đăc trưng và ví dụ minh họa của từng loại phụ thuộc được trình bày như sau.
 
-\noindent \textbf{Polymorphism dependency}: Là loại phụ thuộc khi có sự thừa kết giữa các đối tượng với nhau, tạo ra tính chất đa hình, đa trạng thái của đối tượng (Java) như tính chất liên kết động, upcasting, downcasting,v.v. Ở đây ta xem xét hai trường hợp của lọai phụ thuộc này. Trường hợp thứ nhất khi một Class thừa kế một Interface bằng phương thức Implement. Ví dụ Class, A  thừa kế một interface B, Class A sẽ thừa kế những phương thức của Interface C, tức là tại Class A những phương thức được Interface C định nghĩa sẽ được triển khai. Ngoài ra tham chiếu của Interface B có thể trỏ tới đối tượng của Class A, trong trường hợp đó đối tượng tạo được trỏ tới bởi B chỉ có thể thực hiện những phương thức mà B đã định nghĩa, nhưng phương thúc khác của A sẽ bị làm mờ đi. Trường hợp thứ hai, phụ thuộc xảy ra khi một class thừa kế một class khác thông qua phương thức extends. Ví dụ, class C thừa thế class D, lúc này ta coi D như là Class cha, với C là class con, C sẽ thừa hưởng mọi thuộc tính và phương thức của  D, do đó C có thể ghi đè những phương thức của D, ngoài ra, tham chiếu của Class D có thể trỏ tới đối tượng của class C. Hình 3.6 và 3.7 mô tả ví dụ về hai trường hợp mà ta đã đề cập.
+\noindent \textbf{Polymorphism dependency}: Là loại phụ thuộc khi có sự thừa kết giữa các đối tượng với nhau, tạo ra tính chất đa hình, đa trạng thái của đối tượng (Java) như tính chất liên kết động, upcasting, downcasting,v.v. Ở đây ta xem xét hai trường hợp của lọai phụ thuộc này. 
+
+\noindent Trường hợp thứ nhất khi một Class thừa kế một Interface bằng phương thức Implement. Ví dụ Class, A  thừa kế một interface B, Class A sẽ thừa kế những phương thức của Interface C, tức là tại Class A những phương thức được Interface C định nghĩa sẽ được triển khai. Ngoài ra tham chiếu của Interface B có thể trỏ tới đối tượng của Class A, trong trường hợp đó đối tượng tạo được trỏ tới bởi B chỉ có thể thực hiện những phương thức mà B đã định nghĩa, nhưng phương thúc khác của A sẽ bị làm mờ đi. 
+
+\noindent Trường hợp thứ hai, phụ thuộc xảy ra khi một class thừa kế một class khác thông qua phương thức extends. Ví dụ, class C thừa thế class D, lúc này ta coi D như là Class cha, với C là class con, C sẽ thừa hưởng mọi thuộc tính và phương thức của  D, do đó C có thể ghi đè những phương thức của D, ngoài ra, tham chiếu của Class D có thể trỏ tới đối tượng của class C. Hình 3.6 và 3.7 mô tả ví dụ về hai trường hợp mà ta đã đề cập.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.35]{images/AimplementsB}
+	\includegraphics[scale=0.36]{images/AimplementsB}
 	\caption{Mối quan hệ giữa một Class vớ một Interface qua phương thức Implements}
 	\label{fig:A_implemets_B}
 \end{figure}
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.35]{images/CextendD}
+	\includegraphics[scale=0.36]{images/CextendD}
 	\caption{Mối quan hệ giữa một Class với một Class qua phương thức extends}
 	\label{fig:CextendD}
 \end{figure}
@@ -407,6 +414,7 @@ Hình 3.5 mô tả một AST với một Class Java tương ứng. Trong đó m�
 \end{figure}
 
 \noindent \textbf{Use Dependency}: Không giống với \textit{Inheritance Dependency} hay \textit{Polymorphism dependency}, Use Dependency thể hiện sự tương quan giữa các Class về mặt tương tác dữ liệu,khi các đối tượng của lớp này được sử dụng nhứ là thuộc tính, giá trị trả về, kiểu dữ liệu đầu vào, biến địa phương của phương thức của Class khác hoặc được sử dụng để khai kiểu cho một Generic Class.
+
 \noindent Hình \ref{fig:use_dependency} mô tả \textit{Use dependency}. Chia làm hai ví dụ nhỏ. Ví dụ thứ nhất, đối tượng của Class A được khai báo là thuộc tính của Class B, những phương thức của Class B có kiểu trả về, kiểu dữ liệu đầu vào là đối tượng của Class A. Ví dụ thứ hai, Class C khai bảo kiểu Generic, và định nghĩa những phương thức sử dụng kiểu Generic, tức là kiểu dữ liệu mà Class định nghĩa cho các phương thức, thuộc tính của nó sẽ phụ thuộc vào kiểu dữ liệu được khai báo khi Class được sử dụng.
 \begin{figure}[!htbp]
 	\centering
@@ -416,7 +424,7 @@ Hình 3.5 mô tả một AST với một Class Java tương ứng. Trong đó m�
 	\label{fig:use_dependency}
 \end{figure}
 \\
-\noindent \textbf{Behavior Dependency}: Phụ thuộc thể hiện hành vi của các dối tượng của mỗi Class, tức là sự tương tác của đối tượng của Class này với đối tượng của một Class khác. Điều kiện cần của loại phụ thuộc này đó là giữa Class có tồn tại Inheritance dependency.
+\noindent \textbf{Behavior Dependency}: Phụ thuộc thể hiện hành vi của các đối tượng của mỗi Class, tức là sự tương tác của đối tượng của Class này với đối tượng của một Class khác. Điều kiện cần của loại phụ thuộc này đó là giữa Class có tồn tại Inheritance dependency.
 \subsection{Xây dựng đồ thị phụ thuộc từ cây cấu trúc}
 Đồ thị phụ thuộc nhằm thể hiện mối quan hệ về cấu trúc giữa các thành phần trong mã nguồn, sự tương tác giữa các thành phần như Class, Methol, Field, v.v. với nhau bên trong mã nguồn, tạo nên sự ảnh hưởng qua lại giữa chúng
 việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương pháp kiểm sự tuân thủ mẫu thiết kế bên trong mã nguồn dự án.
@@ -425,6 +433,7 @@ việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương
 
 \noindent Từ việc phân tích các loại phụ thuộc phái trên, ta tiến hành định nghĩa một tập những phụ thuộc, được hiểu như là các cạnh của đồ thị phụ thuộc. Tập các đỉnh là những Class. Được kiệt kê tất cả trong Bảng 3.2 và Bảng 3.3 \cite{orucc2016}.
 \begin{table}[!htbp]
+	\vspace{-0.5cm}
 	\centering
 	\caption{Các loại đỉnh của đồ thị phụ thuộc}
 	\vspace{0.2cm}
@@ -441,6 +450,7 @@ việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương
 \end{table}
 
 \begin{table}[!htbp]
+	\vspace{-0.5cm}
 	\centering
 	\caption{Các loại phụ thuộc Java}
 	\vspace{0.2cm}
@@ -502,8 +512,8 @@ việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương
 Trong đó, đỉnh của đồ thị biểu thị cho các lớp , \textbf{C} tương ứng với Class và \textbf{I} tương ứng với Interface. Những Class, interface này tương tác lẫn nhau qua những phụ thuộc như \textbf{MI} \textit{: class A has a method that has an input parameter with the type of Class B}, \textbf{ML} : \textit{class A has a method that defines a local variable with the type of class B}, v.v.\\
 \begin{figure}[!htbp]
 	\centering
-	\vspace{-1cm}
-	\includegraphics[scale=1]{images/dependency_graph}
+	\vspace{0cm}
+	\includegraphics[scale=0.9]{images/dependency_graph.pdf}
 	\caption{Ví dụ minh họa về đồ thị phụ thuộc}
 	\label{fig:example_graph_dependency}
 \end{figure}\\
@@ -564,7 +574,7 @@ Như ý tưởng đã trình bày ở trên, việc kiểm tra sự tuân thủ 
 Quá trình kiểm trá sự tồn tại của mẫu thiết kế trong mã nguồn chính là quá trình tìm kiếm đồ thị con-đẳng cấu giữa hai đồ thị phụ thuộc đại diện cho mã nguồn và mẫu thiết kế. Quá trình tìm kiếm đồ thị đẳng cấu là quá trình ánh xạ các cặp đỉnh từ hai đồ thị. Việc này tạo nên một không gian trạng thái của những đáp án đổi với mỗi trường hợp ánh xạ của mỗi cặp định khác nhau của hai đồ thị. Quá trình này được mô tả như Hình \ref{fig:vf2_example}.
 \begin{figure}[!htbp]
 	\centering
-	\includegraphics[scale=0.7]{images/_vf2_example.pdf}
+	\includegraphics[scale=1]{images/_vf2_example.pdf}
 	\caption{Mô tả thuật toán VF2}
 	\label{fig:vf2_example}
 \end{figure}\\
@@ -647,7 +657,7 @@ Trong chương này, khóa luận sẽ trình bày về kiến trúc và cách c
 \textbf{Visualyzer}: Mô-đun thể hiện đầu ra của mã của những tính năng từ JCIA-VT 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.6]{images/architexture}
+	\includegraphics[scale=0.65]{images/jcia_architexture}
 	\caption{Tổng quan kiến trúc JCIA-VT}
 	\label{fig:architexture}
 \end{figure}
@@ -673,9 +683,8 @@ Kiến trúc của công cụ bao gồm năm mô-đun chính bao gồm: xử lý
 	%\end{itemize}
 	\item \noindent \textbf{Database}: Quản lý việc lưu trữ cây cấu trúc của mã nguồn cũng như những mẫu thiết kế đã được định nghĩa của dự án. Sự dụng hệ quản trị cơ sở dữ liệu H2. Phần này được xây dựng dựa trên gói \textit{core.DAO} của bộ công cụ JCIA-VT
 	\item \noindent \textbf{Detecting Design Pattern}: Chịu trách nhiệm kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Sử dụng giải thuật VF2 như đã được trình bày tại chương 3 mục 3.4. Với đầu vào là cây cấu trúc của mã nguồn cùng với cây cấu trúc của mẫu thiết kế đã được định nghĩa.
-	\item \noindent \textbf{Visualizer}: Cung cấp giao diện thể hiện kết quả của quá trình kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Kết quả thể hiện dưới dạng đồ thị được triển khai bằng Javascript dựa trên thư việc Visjs \footnote{http://visjs.org/}. Giao tiếp
+	\item \noindent \textbf{Visualizer}: Cung cấp giao diện thể hiện kết quả của quá trình kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Kết quả thể hiện dưới dạng đồ thị được triển khai bằng Javascript dựa trên thư việc Visjs \footnote{http://visjs.org/}. Giao tiếp          
 \end{itemize}
-\newpage
 \section{Triển khai}
 Hiện tại công cụ đã được phát triển và đặt, trên một phiên bản mới của JCIA-VT. Cung cấp những giao diện và tính năng mới liên quan tới việc kiểm tra sự tuân thủ của mẫu thiết kế bên trong mã nguồn.
 \subsection{Giao diện tải nên mẫu thiết kế}
@@ -692,11 +701,11 @@ Sau khi tiến hành tải lên những mẫu thiết kế được yêu cầu t
 Đầu tiên, mã nguồn sẽ được tiến hành tải nên, tại giao diện tại lên mã nguồn dự án như Hình \ref{fig:upload_project_source_code}. Cần thêm được dẫn tới thư mục chứa mã nguồn như trong giao diện mô tả.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.4]{images/upload_project}
+	\includegraphics[scale=0.37]{images/upload_project}
 	\caption{Giao diện tải lên mã nguồn dự án}
 	\label{fig:upload_project_source_code}
-\end{figure}\\
-Sau khi nhấn chọn \textit{Upload}, hệ thống chuyển tới giao diện lịch sử và đồng thời tiến hành phân tích mã nguồn dự án. Giao diện lịch sử sẽ được thể hiện như trong Hình \ref{fig:history_screen}. Bao gồm thông tin về quá trình phân tích mã nguồn, thông tin về mã nguồn của các dự án khác nhau.
+\end{figure}
+\noindent Sau khi nhấn chọn \textit{Upload}, hệ thống chuyển tới giao diện lịch sử và đồng thời tiến hành phân tích mã nguồn dự án. Giao diện lịch sử sẽ được thể hiện như trong Hình \ref{fig:history_screen}. Bao gồm thông tin về quá trình phân tích mã nguồn, thông tin về mã nguồn của các dự án khác nhau.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.4]{images/history_screen}
@@ -720,6 +729,8 @@ Mỗi màn hình đại diện cho một tính năng \textit{Dependency view} l�
 	\label{fig:design_pattern_workspace}
 \end{figure}\\
 Bao gồm, danh sách mẫu thiết kế được sử dụng trong mã nguồn dự án mà công cụ phát hiện được, đồ thị phụ thuộc của mã nguồn dự án. Trong đó, phần màu xanh của đồ thị là phần của một mẫu thiết kế mà công cụ phát hiện mã nguồn có sử dụng mẫu thiết kế đó, phần màu đỏ thể hiện phần mã nguồn liên quan tới mẫu thiết kế đó, tức là khi mau thiết kế thay đổi thì sẽ ảnh hưởng tới phần mã nguồn màu đỏ
+
+
 \section{Thực nghiệm}
 Trong phần này của khóa luận, sẽ tiến hành thực nghiệm công cụ đã được xây dựng. Tập dữ liệu thử nghiệm bao gồm mã nguồn có áp dụng những mẫu thiết kế hướng đối tượng được sử dụng phổ biết như Abstract Factory, Composite, Bridge, Adapter, Proxy v.v.
 \noindent Ta sẽ trình bày một số ví dụ đã được sử dụng để tiến hành thực nghiệm trong quá trình xây dựng công cụ.
@@ -730,27 +741,32 @@ Trong phần này của khóa luận, sẽ tiến hành thực nghiệm công c�
 	\includegraphics[scale=0.8]{images/_abstract_factory.pdf}
 	\caption{Abstract Factory Class Diagram cho ví dụ 1}
 	\label{fig:abstract_factory_diagram}
-\end{figure}\\
+\end{figure}
+
 \noindent \textbf{Điều kiện ban đầu}: Mã nguồn được yêu cầu áp dụng ba mẫu thiết kế là Abstract Factorym Bridge, Command.
 
 \noindent \textbf{Các bước thực hiện}:\\
 \texttt{Bước 1}: Triển khai (Implement) ba mẫu thiết kế và thực hiện tải lên JCIA-VT\\
 \texttt{Bước 2}: Áp dụng ba mẫu thiết kế vào đoạn mã nguồn sẽ viết, sau đó phân tích đoạn mã nguồn đó với JCIA-VT để kiểm tra sự tuân thủ mẫu thiết kế.\\
-\noindent \textbf{Kết quả mong đợi}: Công cụ sẽ kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn ứng dụng, phát hiện được ba mẫu thiết kế đã được áp dụng.\\\\\\\\\
-\textbf{Thực hiện:}\\
-\noindent \textbf{Bước 1}: Triển khai ba mẫu thiết kế. Hình \ref{fig:abstract_factory_diagram} mô tả cấu trúc của kiểu mẫu thiết kế Abstrac Factory. Ta sẽ viết mã Java triển khai lại mẫu thiết kế như trong biểu đồ lớp Hình \ref{fig:abstract_factory_diagram}. Thực hiện như vậy với cả ba mẫu thiết kê, sau đó tải chúng lên cơ sở dữ liệu mẫu thiết kế của bộ công cụ JCIA-VT, mỗi dự án sẽ có những bộ mẫu thiết kế khác nhau.\\\\
-\noindent \textbf{Bước 2}: Sau khi áp dụng ba mẫu thiết kế kể trên vào trong mã nguồn, tiến hành phân tích mã nguồn bằng JCIA-VT, để kiểm tra sự tồn tại của những mẫu thiết kế đó trong mã nguồn và những mẫu thiết kế đó sẽ ảnh hưởng tới những thành phần nào trong mã nguồn. Từ đó ta sẽ đưa ra được kết luật về sự tuân thủ mẫu thiết kế bên trong mã nguồn.\\\\
-\noindent \textbf{Kết quả}: Sau khi tiến hành phân tích, ta nhận được kết quả tra ra như Hình 4.9. Trong đó, màn hình thể hiện đã phát hiện được ba mẫu thiết được áp dụng trong mã nguồn. Đoạn đồ thị màu xanh non thể hiện thành phần chính của mẫu thiết kế (Bridge), tức là đây là thành phần đẳng cấu của mã nguồn với mẫu thiết kế (Bridge) mà công cụ phát hiện được. Phần đồ thị màu đỏ, thể hiện những thành phần mã nguồn có phụ thuộc với mẫu thiết kế đó trong mã nguồn.
+\noindent \textbf{Kết quả mong đợi}: Công cụ sẽ kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn ứng dụng, phát hiện được ba mẫu thiết kế đã được áp dụng.\\\\
+\noindent \textbf{Thực hiện:}\\
+\noindent \textbf{Bước 1}: Triển khai ba mẫu thiết kế. Hình \ref{fig:abstract_factory_diagram} mô tả cấu trúc của kiểu mẫu thiết kế Abstrac Factory. Ta sẽ viết mã Java triển khai lại mẫu thiết kế như trong biểu đồ lớp Hình \ref{fig:abstract_factory_diagram}. Thực hiện như vậy với cả ba mẫu thiết kê, sau đó tải chúng lên cơ sở dữ liệu mẫu thiết kế của bộ công cụ JCIA-VT, mỗi dự án sẽ có những bộ mẫu thiết kế khác nhau.
+
+\noindent \textbf{Bước 2}: Sau khi áp dụng ba mẫu thiết kế kể trên vào trong mã nguồn, tiến hành phân tích mã nguồn bằng JCIA-VT, để kiểm tra sự tồn tại của những mẫu thiết kế đó trong mã nguồn và những mẫu thiết kế đó sẽ ảnh hưởng tới những thành phần nào trong mã nguồn. Từ đó ta sẽ đưa ra được kết luật về sự tuân thủ mẫu thiết kế bên trong mã nguồn.
+
+\noindent \textbf{Kết quả}: Sau khi tiến hành phân tích, kết quả được trả ra như Hình 4.9. Trong đó, màn hình có hai phần chính bao gồm: danh sách những mẫu thiết kế mã nguồn đã áp dựng theo như đặc tả của dự án, đồ thị phụ thuộc của mã nguồn dự án. Về phần đồ thị phụ thuộc mã nguồn, được chia thành ba màu chính, màu xanh non thể hiện phần mẫu thiết kế mà trong mã nguồn đã tuân thủ như đặc tả của dự án, phần màu đỏ là những thành phần liên quan tới mẫu thiết kế trong quá phát triển mã nguồn, phàn đồ thị màu xanh nước biến thể hiện những thành phần mã nguồn còn lại.
+
+\noindent Từ màn hình kết quả ta có thể đưa ra kết luận. Mã nguồn đã hoàn toàn tuân thủ theo đăc tả thiết kế ban đầu. Thể hiện bằng thông qua việc cả ba mẫu thiết kế được yêu cầu áp dụng đề đã tồn tại trong mã nguồn dự án.\\
 \begin{figure}[h]
+	\vspace{-2.5cm}
 	\centering
 	\includegraphics[scale=0.4]{images/result_example_1}
 	\label{fig:result_example_1}
 	\caption{Kết quả phân tích ví dụ 1}
 \end{figure}\\
-\newpage
 \noindent \textbf{Ví dụ 2}: Sẽ thực hiện với kịch bản tương tự tại ví dụ 1, nhưng tại mã nguồn cần áp dụng mẫu Abstract Factory, ta đã áp dụng mẫu này khác so với mẫu Abstract Factory đã được tải lên cơ sở dữ liệu mẫu thiết kế của JCIA-VT. Tức là, về tính chất thì mã nguồn đã áp dụng đúng tính chất của mẫu Abstract Factory nhưng về mặt cấu trúc mã nguồn do khác so với cấu trúc mã nguồn đã tải lên cơ sở dữ liệu của JCIA-VT do vậy, công cụ sẽ không phát hiện được
 
-\noindent \textbf{Điều kiện ban đầu}: Mã nguồn được yêu cầu áp dụng ba mẫu thiết kế là Abstract Factory, Bridge, Command. Trong đó mẫu Abstract Factory được áp dụng trong mã nguồn sẽ có cấu trúc khác với mẫu Abstract factory được yêu cầu như Hình \ref{fig:abstract_factory_diagram}. Hình \ref{fig:abstract_factory_diaram_2} là thể hiện cấu trúc mẫu Abstract Factory sẽ được áp dụng trong mã nguồn.
+\noindent \textbf{Điều kiện ban đầu}: Mã nguồn được yêu cầu áp dụng ba mẫu thiết kế là Abstract Factory, Bridge, Command. Trong đó mẫu Abstract Factory được áp dụng trong mã nguồn sẽ có cấu trúc khác với mẫu Abstract factory được yêu cầu như Hình \ref{fig:abstract_factory_diagram}. Hình 4.10 là thể hiện cấu trúc mẫu Abstract Factory sẽ được áp dụng trong mã nguồn.
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=.8]{images/_abstract_factory_2.pdf}
