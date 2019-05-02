@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.16)  2 MAY 2019 19:25
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.16)  2 MAY 2019 19:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2272,12 +2272,12 @@ Package hyperref Warning: Composite letter `\textasciigrave+\ocircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 443.
 
-<images/AimplementsB.png, id=511, 782.925pt x 487.8225pt>
+<images/AimplementsB.png, id=513, 782.925pt x 487.8225pt>
 File: images/AimplementsB.png Graphic file (type png)
 <use images/AimplementsB.png>
 Package pdftex.def Info: images/AimplementsB.png  used on input line 453.
 (pdftex.def)             Requested size: 281.85278pt x 175.61597pt.
-<images/CextendD.png, id=513, 839.135pt x 680.5425pt>
+<images/CextendD.png, id=515, 839.135pt x 680.5425pt>
 File: images/CextendD.png Graphic file (type png)
 <use images/CextendD.png>
 Package pdftex.def Info: images/CextendD.png  used on input line 459.
@@ -2295,7 +2295,7 @@ l.463 \newpage
                                                   \fi \fi 
 l.463 \newpage
                <./images/AimplementsB.png> <./images/CextendD.png>]
-<images/D_extends_E.png, id=526, 803.0pt x 612.2875pt>
+<images/D_extends_E.png, id=528, 803.0pt x 612.2875pt>
 File: images/D_extends_E.png Graphic file (type png)
 <use images/D_extends_E.png>
 Package pdftex.def Info: images/D_extends_E.png  used on input line 468.
@@ -2305,7 +2305,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 464--472
 
  []
 
-<images/use_dependency.png, id=528, 823.075pt x 893.3375pt>
+<images/use_dependency.png, id=530, 823.075pt x 893.3375pt>
 File: images/use_dependency.png Graphic file (type png)
 <use images/use_dependency.png>
 Package pdftex.def Info: images/use_dependency.png  used on input line 478.
@@ -2406,7 +2406,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+o'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 567.
 
-<images/dependency_graph.pdf, id=546, 529.01637pt x 284.02109pt>
+<images/dependency_graph.pdf, id=548, 529.01637pt x 284.02109pt>
 File: images/dependency_graph.pdf Graphic file (type pdf)
 <use images/dependency_graph.pdf>
 Package pdftex.def Info: images/dependency_graph.pdf  used on input line 573.
@@ -2601,7 +2601,7 @@ Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 633.
 
-<images/_vf2_example.pdf, id=592, 378.45387pt x 442.53331pt>
+<images/_vf2_example.pdf, id=594, 378.45387pt x 442.53331pt>
 File: images/_vf2_example.pdf Graphic file (type pdf)
 <use images/_vf2_example.pdf>
 Package pdftex.def Info: images/_vf2_example.pdf  used on input line 638.
@@ -2700,7 +2700,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+u'
 [29
 
 ]
-<images/jcia_architexture.pdf, id=660, 680.5425pt x 423.50218pt>
+<images/jcia_architexture.pdf, id=662, 680.5425pt x 423.50218pt>
 File: images/jcia_architexture.pdf Graphic file (type pdf)
 <use images/jcia_architexture.pdf>
 Package pdftex.def Info: images/jcia_architexture.pdf  used on input line 752.
@@ -2798,7 +2798,7 @@ Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 756.
 
 [30]
-<images/c4_architexture.pdf, id=667, 417.47968pt x 257.04028pt>
+<images/c4_architexture.pdf, id=669, 417.47968pt x 257.04028pt>
 File: images/c4_architexture.pdf Graphic file (type pdf)
 <use images/c4_architexture.pdf>
 Package pdftex.def Info: images/c4_architexture.pdf  used on input line 762.
@@ -2875,7 +2875,7 @@ Package hyperref Warning: Composite letter `\textacute+\ecircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ecircumflex' on input line 782.
 
-<images/ds_upload_example.png, id=751, 1119.18124pt x 706.64pt>
+<images/ds_upload_example.png, id=753, 1119.18124pt x 706.64pt>
 File: images/ds_upload_example.png Graphic file (type png)
 <use images/ds_upload_example.png>
 Package pdftex.def Info: images/ds_upload_example.png  used on input line 788.
@@ -2938,12 +2938,12 @@ Package hyperref Warning: Composite letter `\textasciigrave+\ocircumflex'
 Package hyperref Warning: Glyph not defined in PD1 encoding,
 (hyperref)                removing `\ocircumflex' on input line 793.
 
-<images/upload_project.png, id=759, 1132.23pt x 715.67375pt>
+<images/upload_project.png, id=761, 1132.23pt x 715.67375pt>
 File: images/upload_project.png Graphic file (type png)
 <use images/upload_project.png>
 Package pdftex.def Info: images/upload_project.png  used on input line 800.
 (pdftex.def)             Requested size: 452.88397pt x 286.26442pt.
-<images/history_screen.png, id=760, 1128.215pt x 266.9975pt>
+<images/history_screen.png, id=762, 1128.215pt x 266.9975pt>
 File: images/history_screen.png Graphic file (type png)
 <use images/history_screen.png>
 Package pdftex.def Info: images/history_screen.png  used on input line 806.
@@ -2955,7 +2955,7 @@ Package pdftex.def Info: images/history_screen.png  used on input line 806.
                                                   \fi \fi 
 l.810 
        <./images/ds_upload_example.png>]
-<images/main_screen.png, id=768, 1927.2pt x 951.555pt>
+<images/main_screen.png, id=770, 1927.2pt x 951.555pt>
 File: images/main_screen.png Graphic file (type png)
 <use images/main_screen.png>
 Package pdftex.def Info: images/main_screen.png  used on input line 816.
@@ -2978,7 +2978,7 @@ l.820
                                                   \fi \fi 
 l.820 
        <./images/upload_project.png> <./images/history_screen.png>]
-<images/design_pattern_workspace.png, id=776, 1357.07pt x 910.40125pt>
+<images/design_pattern_workspace.png, id=778, 1357.07pt x 910.40125pt>
 File: images/design_pattern_workspace.png Graphic file (type png)
 <use images/design_pattern_workspace.png>
 Package pdftex.def Info: images/design_pattern_workspace.png  used on input lin
@@ -3048,7 +3048,7 @@ Package hyperref Warning: Composite letter `\textdotbelow+o'
 (hyperref)                not defined in PD1 encoding,
 (hyperref)                removing `\textdotbelow' on input line 865.
 
-<images/node_factory.pdf, id=785, 528.05281pt x 444.70139pt>
+<images/node_factory.pdf, id=787, 528.05281pt x 444.70139pt>
 File: images/node_factory.pdf Graphic file (type pdf)
 <use images/node_factory.pdf>
 Package pdftex.def Info: images/node_factory.pdf  used on input line 869.
@@ -3070,12 +3070,12 @@ LaTeX Warning: `h' float specifier changed to `ht'.
                                                   \fi \fi 
 l.879 
       ]
-<images/node_fac_graph.png, id=799, 1115.16624pt x 485.815pt>
+<images/node_fac_graph.png, id=801, 1115.16624pt x 485.815pt>
 File: images/node_fac_graph.png Graphic file (type png)
 <use images/node_fac_graph.png>
 Package pdftex.def Info: images/node_fac_graph.png  used on input line 891.
 (pdftex.def)             Requested size: 390.31404pt x 170.0378pt.
-<images/node_fact_result.png, id=800, 1296.845pt x 720.6925pt>
+<images/node_fact_result.png, id=802, 1296.845pt x 720.6925pt>
 File: images/node_fact_result.png Graphic file (type png)
 <use images/node_fact_result.png>
 Package pdftex.def Info: images/node_fact_result.png  used on input line 898.
@@ -3104,7 +3104,7 @@ l.903 \newpage
                                                   \fi \fi 
 l.903 \newpage
                <./images/node_fac_graph.png> <./images/node_fact_result.png>]
-<images/_abstract_factory.pdf, id=835, 513.83968pt x 412.4208pt>
+<images/_abstract_factory.pdf, id=837, 513.83968pt x 412.4208pt>
 File: images/_abstract_factory.pdf Graphic file (type pdf)
 <use images/_abstract_factory.pdf>
 Package pdftex.def Info: images/_abstract_factory.pdf  used on input line 908.
@@ -3122,7 +3122,7 @@ pdfTeX warning: /usr/bin/pdflatex (file ./images/_abstract_factory.pdf): PDF in
 clusion: invalid other resource which is no dict (key 'ProcSets', type <array>)
 ; ignored.
 >]
-<images/result_example_1.png, id=892, 1166.3575pt x 815.045pt>
+<images/result_example_1.png, id=894, 1166.3575pt x 815.045pt>
 File: images/result_example_1.png Graphic file (type png)
 <use images/result_example_1.png>
 Package pdftex.def Info: images/result_example_1.png  used on input line 932.
@@ -3136,7 +3136,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 928--936
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [42]
-<images/_abstract_factory_2.pdf, id=900, 518.89856pt x 477.70468pt>
+<images/_abstract_factory_2.pdf, id=902, 518.89856pt x 477.70468pt>
 File: images/_abstract_factory_2.pdf Graphic file (type pdf)
 <use images/_abstract_factory_2.pdf>
 Package pdftex.def Info: images/_abstract_factory_2.pdf  used on input line 942
@@ -3238,10 +3238,10 @@ texmf-dist/fonts/type1/vntex/vnr/vnr7.pfb></usr/share/texlive/texmf-dist/fonts/
 type1/vntex/vnr/vnr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/v
 nr9.pfb></usr/share/texlive/texmf-dist/fonts/type1/vntex/vnr/vnti12.pfb></usr/s
 hare/texlive/texmf-dist/fonts/type1/vntex/vnr/vntt12.pfb>
-Output written on thesis.pdf (63 pages, 2233398 bytes).
+Output written on thesis.pdf (63 pages, 2233255 bytes).
 PDF statistics:
- 1067 PDF objects out of 1200 (max. 8388607)
- 832 compressed objects within 9 object streams
+ 1069 PDF objects out of 1200 (max. 8388607)
+ 834 compressed objects within 9 object streams
  164 named destinations out of 1000 (max. 500000)
  423 words of extra memory for PDF output out of 10000 (max. 10000000)
 
