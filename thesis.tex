@@ -733,7 +733,7 @@ Kiến trúc của công cụ bao gồm năm mô-đun chính bao gồm: xử lý
 	%\end{itemize}
 	\item \noindent \textbf{Database}: Quản lý việc lưu trữ cây cấu trúc của mã nguồn cũng như những mẫu thiết kế đã được định nghĩa của dự án. Sự dụng hệ quản trị cơ sở dữ liệu H2. Phần này được xây dựng dựa trên gói \textit{core.DAO} của bộ công cụ JCIA-VT
 	\item \noindent \textbf{Detect design patterns adherence}: Chịu trách nhiệm kiểm tra sự tồn tại của những mẫu thiết kế bên trong mã nguồn. Sử dụng giải thuật VF2 như đã được trình bày tại chương 3 mục 3.4. Với đầu vào là cây cấu trúc của mã nguồn cùng với cây cấu trúc của mẫu thiết kế đã được định nghĩa. Mô-đun tiến hành kiểm tra sự tồn tại của toàn bộ những mẫu thiết kế bên trong mã nguồn, từ đó trả ra kết quả về sự tuân thủ những mẫu thiết kế của mã nguồn so với đặc tả và thiết kế ban đầu. Dữ liệu trả về cho mô-dun Visiualier thông qua giao thức API.
-	\item \noindent \textbf{Visualizer}: Cung cấp giao diện thể hiện kết quả của quá trình kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Kết quả thể hiện dưới dạng đồ thị được triển khai bằng Javascript dựa trên thư việc Visjs \footnote{http://visjs.org/}. Giao tiếp          
+	\item \noindent \textbf{Visualizer}: Cung cấp giao diện thể hiện kết quả của quá trình kiểm tra sự tồn tại của mẫu thiết kế bên trong mã nguồn. Kết quả thể hiện dưới dạng đồ thị được triển khai bằng Javascript dựa trên thư việc Visjs \footnote{http://visjs.org/}.  
 \end{itemize}
 \section{Triển khai}
 Hiện tại công cụ đã được phát triển và đặt, trên một phiên bản mới của JCIA-VT. Cung cấp những giao diện và tính năng mới liên quan tới việc kiểm tra sự tuân thủ của mẫu thiết kế bên trong mã nguồn.
@@ -746,7 +746,7 @@ Sau khi đăng nhập thành công vào hệ thống, để có thể tiến hà
 	\includegraphics[scale=0.4]{images/ds_upload_example}
 	\caption{Giao diện tải lên mẫu thiết kế}
 	\label{fig:ds_upload_example}
-\end{figure}\\
+\end{figure}
 Giao diện tải lên mẫu thiết kế cung cấp hai tính năng chính. Thứ nhất, tải lên và quản lý mẫu thiết kế. Khi người dùng tải lên mẫu thiết kế mới, mã nguồn của mẫu thiết kế sẽ được tiến hành xử lý để xây dựng đồ thị phụ thuộc thể hiện cấu trúc của mã nguồn sau đó được lưu trữ trên cơ sở dữ liệu nhằm phục vụ công việc kiểm tra sự tuân thủ mẫu thiết kế. Thứ hai: quản lý và hiển thị đồ thị phụ thuộc của mẫu thiết kế, người dùng có thể thêm hoặc xóa mẫu thiết kế, đồng thời giao diện cũng cung cấp cửa sổ hiển thị đồ thị phụ thuộc của mẫu thiết kế.
 \subsection{Giao diện phát hiện mẫu thiết kế bên trong mã nguồn}
 Sau khi tiến hành tải lên những mẫu thiết kế được yêu cầu trong việc phát triển mã nguồn. Ta tiến hành phân tích mã nguồn để kiểm tra sự tuân thủ của mã nguồn đối với những mẫu thiết kế đã được qui định. Ở phân này, ta sẽ trình bày lần lượt từng bước một theo luồng điều khiển, bao gồm quá trình tải liên mã nguồn dự án, quá trình phân tích ảnh hưởng và quá trình kiểm tra sự tuân thủ mẫu thiết kế bên trong mã nguồn của dự án.
@@ -783,48 +783,82 @@ Mỗi màn hình đại diện cho một tính năng, \textit{Dependency view} l
 Bao gồm, danh sách mẫu thiết kế được sử dụng trong mã nguồn dự án mà công cụ phát hiện được, đồ thị phụ thuộc của mã nguồn dự án. Trong đó, phần màu xanh của đồ thị là phần của một mẫu thiết kế mà công cụ phát hiện mã nguồn có sử dụng mẫu thiết kế đó, phần màu đỏ thể hiện phần mã nguồn liên quan tới mẫu thiết kế đó, tức là khi mẫu thiết kế thay đổi thì sẽ ảnh hưởng tới phần mã nguồn màu đỏ.
 \newpage
 \section{Thực nghiệm}
-Trong phần này của khóa luận, sẽ tiến hành thực nghiệm công cụ đã được xây dựng. Tập dữ liệu thử nghiệm bao gồm mã nguồn có áp dụng những mẫu thiết kế hướng đối tượng được sử dụng phổ biết như Abstract Factory, Composite, Bridge, Adapter, Proxy v.v.
-\noindent Ta sẽ trình bày một số ví dụ đã được sử dụng để tiến hành thực nghiệm trong quá trình xây dựng công cụ.
-
-\noindent \textbf{Ví dụ 1}: Ví dụ này sẽ tiến hành thực nghiệm dựa trên một đoạn mã nguồn sử dụng Java đã được yêu cầu sử dụng ba mẫu thiết kế là Abstract Factory, Bridge, Command trong quá trình phát triển dự án. Hình \ref{fig:abstract_factory_diagram} mô tả biểu đồ lớp của mẫu Abstract Factory mà ta sẽ cần áp dụng trong mã nguồn ứng dụng.
+Trong phần này của khóa luận, sẽ tiến hành thực nghiệm công cụ đã được xây dựng. Tập dữ liệu thử nghiệm bao gồm mã nguồn có áp dụng những mẫu thiết kế hướng đối tượng được sử dụng phổ biến như Abstract Factory, Composite, Bridge, Adapter, Proxy v.v.
+\noindent Ta sẽ trình bày một số ví dụ đã được sử dụng để tiến hành thực nghiệm trong quá trình xây dựng công cụ.\\\\
+\noindent \textbf{Ví dụ 1}: Ở ví dụ này ta tiến hành thử nghiệm một mẫu thiết kế được đội phát triển tự định nghĩa trước, nhằm giải vấn đề quản lý những đối tượng được tạo trong quá trình phân tích mã nguồn. Mẫu thiết kế mà đội dự án định nghĩa có điểm tương đồng với mẫu Abstract Factory, nhưng khác ở kiểu của các lớp. Hình 4.8  mô tả sơ đồ lớp của mẫu thiết kế cần áp dụng trong mã nguồn. Nhằm quản lý các đối tượng trong quá trình phân tích mã nguồn.\\
 \begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.7]{images/node_factory.pdf}
+	\caption{Sơ đồ lớp mẫu thiết kế được định nghĩa tại Ví dụ 1}
+	\label{fig:node_factory}
+\end{figure}
+
+\noindent \textbf{Điều kiện ban đầu}: Mã nguồn sẽ áp dụng mẫu thiết kế mà đội dự án đã định nghĩa như Hình \ref{fig:node_factory}.
+
+\noindent \textbf{Các bước thực hiện để kiểm tra sự tuân thủ mẫu thiết kế của mã nguồn}:\\
+\texttt{Bước 1}: Triển khai mẫu thiết kế, tải lên mã nguồn của mẫu thiết kế.\\
+\texttt{Bước 2}: Phân tích mã nguồn dự án để kiểm tra sự tuân thủ mẫu thiết kế.
+
+\noindent \textbf{Kết quả mong đợi}: Công cụ sẽ phát hiện sự tồn tại của mẫu thiết kế trong mã nguồn. Từ đó kết luận về sự tuân thủ mẫu thiết kế trong mã nguồn.
+
+\noindent \textbf{Thự hiện}:
+
+\noindent \textbf{Bước 1}: Sau khi mẫu thiết kế được định nghĩa và tiến hành triển khai dưới dạng các đoạn mã Java sẽ được tải lên cơ sở dữ liệu mẫu thiết kế tương ứng với mỗi dự án của JCIA-VT. Ta sẽ được đồ thị phụ thuộc của mẫu thiết kế như Hình \ref{fig:node_fac_graph}.
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.35]{images/node_fac_graph.png}
+	\caption{Đồ thị phụ thuộc của mẫu thiết kế được định nghĩa tại Ví dụ 1}
+	\label{fig:node_fac_graph}
+\end{figure}\\
+\noindent \textbf{Bước 2}: Tiến hành phân tích mã nguồn dự án nhằm kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn. Ta sẽ tải lên tập tin nén của mã nguồn dự án, quán trình phân tích hoàn thành kết quả sẽ trả về như Hình \ref{fig:result_example_1}.
+\begin{figure}[h]
+	\vspace{-0.1cm}
+	\centering
+	\includegraphics[scale=0.32]{images/node_fact_result.png}
+	\caption{Kết quả phân tích mã nguồn dự án tại Ví dụ 1}
+	\label{fig:result_example_1}
+\end{figure}\\
+\textbf{Kết quả}: Ta thấy, công cụ đã phát hiện, mã nguồn dự án đã tuân thủ việc áp dụng mẫu thiết kế mà đội dự án định nghĩa trước đó. Bằng chứng là sự tồn tại của mẫu thiết kế (tên tạm đặt: Factory Node) trong mã nguồn dự án. Ngoài ra, những nút màu xanh non thể hiện thành phần chính của mẫu thiết kế (Factory Node), những nút màu đỏ thể hiện những thành phần mã nguồn có phụ thuộc với mẫu thiết kế đó.\\\\
+\noindent \textbf{Ví dụ 2}: Ví dụ này sẽ tiến hành thực nghiệm dựa trên một đoạn mã nguồn sử dụng Java đã được yêu cầu sử dụng ba mẫu thiết kế là Abstract Factory, Bridge, Command trong quá trình phát triển dự án. Hình \ref{fig:abstract_factory_diagram} mô tả biểu đồ lớp của mẫu Abstract Factory mà ta sẽ cần áp dụng trong mã nguồn ứng dụng.
+\begin{figure}[h]
+	\vspace{1cm}
 	\centering
 	\includegraphics[scale=0.8]{images/_abstract_factory.pdf}
 	\caption{Abstract Factory Class Diagram cho ví dụ 1}
 	\label{fig:abstract_factory_diagram}
-\end{figure}
-
+\end{figure}\\
 \noindent \textbf{Điều kiện ban đầu}: Mã nguồn được yêu cầu áp dụng ba mẫu thiết kế là Abstract Factorym Bridge, Command.
 
-\noindent \textbf{Các bước thực hiện}:\\
-\texttt{Bước 1}: Triển khai (Implement) ba mẫu thiết kế và thực hiện tải lên JCIA-VT\\
-\texttt{Bước 2}: Áp dụng ba mẫu thiết kế vào đoạn mã nguồn sẽ viết, sau đó phân tích đoạn mã nguồn đó với JCIA-VT để kiểm tra sự tuân thủ mẫu thiết kế.\\
+\noindent \textbf{Các bước thực hiện để kiểm tra sự tuân thủ mẫu thiết kế của mã nguồn}:\\
+\texttt{Bước 1}: Triển khai ba mẫu thiết kế và thực hiện tải lên mã nguồn của mẫu thiết kế.\\
+\texttt{Bước 2}: Phân tích đoạn mã nguồn đó nhằm kiểm tra sự tuân thủ mẫu thiết kế.
+
 \noindent \textbf{Kết quả mong đợi}: Công cụ sẽ kiểm tra sự tuân thủ mẫu thiết kế trong mã nguồn ứng dụng, phát hiện được ba mẫu thiết kế đã được áp dụng.\\\\
 \noindent \textbf{Thực hiện:}\\
 \noindent \textbf{Bước 1}: Triển khai ba mẫu thiết kế. Hình \ref{fig:abstract_factory_diagram} mô tả cấu trúc của kiểu mẫu thiết kế Abstrac Factory. Ta sẽ viết mã Java triển khai lại mẫu thiết kế như trong biểu đồ lớp Hình \ref{fig:abstract_factory_diagram}. Thực hiện như vậy với cả ba mẫu thiết kế, sau đó tải chúng lên cơ sở dữ liệu mẫu thiết kế của bộ công cụ JCIA-VT, mỗi dự án sẽ có những bộ mẫu thiết kế khác nhau.
 
 \noindent \textbf{Bước 2}: Sau khi áp dụng ba mẫu thiết kế kể trên vào trong mã nguồn, tiến hành phân tích mã nguồn bằng JCIA-VT, để kiểm tra sự tồn tại của những mẫu thiết kế đó trong mã nguồn và những mẫu thiết kế đó sẽ ảnh hưởng tới những thành phần nào trong mã nguồn. Từ đó ta sẽ đưa ra được kết luật về sự tuân thủ mẫu thiết kế bên trong mã nguồn.
 
-\noindent \textbf{Kết quả}: Sau khi tiến hành phân tích, kết quả được trả ra như Hình 4.9. Trong đó, màn hình có hai phần chính bao gồm: danh sách những mẫu thiết kế mã nguồn đã áp dụng theo như đặc tả của dự án, đồ thị phụ thuộc của mã nguồn dự án. Về phần đồ thị phụ thuộc mã nguồn, được chia thành ba màu chính, màu xanh non thể hiện phần mẫu thiết kế mà trong mã nguồn đã tuân thủ như đặc tả của dự án, phần màu đỏ là những thành phần liên quan tới mẫu thiết kế trong quá phát triển mã nguồn, phàn đồ thị màu xanh nước biển thể hiện những thành phần mã nguồn còn lại.
+\noindent \textbf{Kết quả}: Sau khi tiến hành phân tích, kết quả được trả ra như Hình \ref{fig:result_example_2}. Trong đó, màn hình có hai phần chính bao gồm: danh sách những mẫu thiết kế mã nguồn đã áp dụng theo như đặc tả của dự án, đồ thị phụ thuộc của mã nguồn dự án. Về phần đồ thị phụ thuộc mã nguồn, được chia thành ba màu chính, màu xanh non thể hiện phần mẫu thiết kế mà trong mã nguồn đã tuân thủ như đặc tả của dự án, phần màu đỏ là những thành phần liên quan tới mẫu thiết kế trong quá phát triển mã nguồn, phàn đồ thị màu xanh nước biển thể hiện những thành phần mã nguồn còn lại.
 
 \noindent Từ màn hình kết quả ta có thể đưa ra kết luận. Mã nguồn đã hoàn toàn tuân thủ theo đặc tả thiết kế ban đầu. Thể hiện bằng thông qua việc cả ba mẫu thiết kế được yêu cầu áp dụng đề đã tồn tại trong mã nguồn dự án.\\
 \begin{figure}[h]
 	\vspace{-2.5cm}
 	\centering
 	\includegraphics[scale=0.4]{images/result_example_1}
-	\label{fig:result_example_1}
-	\caption{Kết quả phân tích ví dụ 1}
+	\caption{Kết quả phân tích ví dụ 2}
+	\label{fig:result_example_2}
 \end{figure}\\
-\noindent \textbf{Ví dụ 2}: Sẽ thực hiện với kịch bản tương tự tại ví dụ 1, nhưng tại mã nguồn cần áp dụng mẫu Abstract Factory, ta đã áp dụng mẫu này khác so với mẫu Abstract Factory đã được tải lên cơ sở dữ liệu mẫu thiết kế của JCIA-VT. Tức là, về tính chất thì mã nguồn đã áp dụng đúng tính chất của mẫu Abstract Factory nhưng về mặt cấu trúc mã nguồn do khác so với cấu trúc mã nguồn đã tải lên cơ sở dữ liệu của JCIA-VT do vậy, công cụ sẽ không phát hiện được
+\newpage
+\noindent \textbf{Ví dụ 3}: Sẽ thực hiện với kịch bản tương tự tại ví dụ 2, nhưng tại mã nguồn cần áp dụng mẫu Abstract Factory, ta đã áp dụng mẫu này khác so với mẫu Abstract Factory đã được tải lên cơ sở dữ liệu mẫu thiết kế của JCIA-VT. Tức là, về tính chất thì mã nguồn đã áp dụng đúng tính chất của mẫu Abstract Factory nhưng về mặt cấu trúc mã nguồn do khác so với cấu trúc mã nguồn đã tải lên cơ sở dữ liệu của JCIA-VT do vậy, công cụ sẽ không phát hiện được
 
-\noindent \textbf{Điều kiện ban đầu}: Mã nguồn được yêu cầu áp dụng ba mẫu thiết kế là Abstract Factory, Bridge, Command. Trong đó mẫu Abstract Factory được áp dụng trong mã nguồn sẽ có cấu trúc khác với mẫu Abstract factory được yêu cầu như Hình \ref{fig:abstract_factory_diagram}. Hình 4.10 là thể hiện cấu trúc mẫu Abstract Factory sẽ được áp dụng trong mã nguồn.
+\noindent \textbf{Điều kiện ban đầu}: Mã nguồn được yêu cầu áp dụng ba mẫu thiết kế là Abstract Factory, Bridge, Command. Trong đó mẫu Abstract Factory được áp dụng trong mã nguồn sẽ có cấu trúc khác với mẫu Abstract factory được yêu cầu như Hình \ref{fig:abstract_factory_diagram}. Hình \ref{fig:abstract_factory_diaram_2} là thể hiện cấu trúc mẫu Abstract Factory sẽ được áp dụng trong mã nguồn.
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=.8]{images/_abstract_factory_2.pdf}
-	\label{fig:abstract_factory_diaram_2}
+	\includegraphics[scale=.7]{images/_abstract_factory_2.pdf}
 	\caption{Abstract Factory Diagram cho ví dụ 2}
-\end{figure}
-
+	\label{fig:abstract_factory_diaram_2}
+\end{figure}\\
 \noindent \textbf{Các bước thực hiện}: Các bước thực hiện sẽ tương tự như ví dụ 1 
 
 \noindent \textbf{Kết quả}: Mẫu thiết kế Abstrac Factory sẽ không được phát hiện bởi công cụ.
@@ -832,15 +866,15 @@ Trong phần này của khóa luận, sẽ tiến hành thực nghiệm công c�
 \noindent \textbf{Lý giải}: Bản chất của việc phát hiện sự tuân thủ mẫu thiết kế là tiến hành kiểm tra mã nguồn có tồn tại những mẫu thiết kế như tài liệu đặc tả và thiết kế hay không. Phương pháp mà khóa luận này đề xuất tiếp cận theo hướng đồ thị. Tức là, ta có đồ thị phụ thuộc của mẫu thiết kế đã được triển khai trước đó và đồ thị phụ thuộc của toàn bộ mã nguồn ứng dụng. Công việc cần làm đó là tiến hành kiểm tra trong mã nguồn có tồn tại một đồ thị đẳng cấu với đồ thị của mẫu thiết kế hay không.
 Do vậy triển khai mẫu thiết kế ban đầu là quan trọng sao cho mẫu thiết kế đó là đúng và gọn gàng nhất, khi áp dụng mẫu thiết kế đó vào mã nguồn cần đảm bảo rằng trong mã nguồn áp dụng, mẫu thiết kế đó chỉ có xu hướng mở rộng so với định nghĩa ban đầu.
 
-\noindent Trên đây là hai trong số nhiều ví dụ đã được thực hiện để kiểm tra tính đúng đắn của công cụ. Về cơ bản, công cụ hoạt động tốt với một số mẫu thiết kế thuộc \textit{GoF (Gang of Fours) design patters} \cite{go4} như Abstract Factory, Builder, Command,... bên cạnh đó còn gặp một số hạn chế về trùng lặp giữa các mẫu thiết kế.
-Ngoài ra, công cụ còn hỗ trợ kiểm tra những mẫu thiết kế mà đội dự án tự định nghĩa. 
+\noindent Trên đây là hai trong số nhiều ví dụ đã được thực hiện để kiểm tra tính đúng đắn của công cụ. Về cơ bản, công cụ hoạt động tốt với một số mẫu thiết kế thuộc \textit{GoF (Gang of Fours) design patters} \cite{go4} như Abstract Factory, Builder, Command,... bên cạnh đó còn gặp một số hạn chế về trùng lặp giữa các mẫu thiết kế. Việc trùng lặp mẫu thiết kế sảy ra là do những phụ thuộc hiện tại chưa đủ để thể hiện đăng trưng giữa một số mẫu thiết kế, trong các giai đoạn đoạn tiếp theo tiến hành nghiên cứu và thêm và nhiều phụ thuộc hơn nữa trong quá trình phân tích mã nguồn.
+Ngoài ra, công cụ còn hỗ trợ kiểm tra những mẫu thiết kế mà đội dự án tự định nghĩa.
 
 \subsection{Thảo luận}
 Công cụ kiểm tra sự tuân thủ mẫu thiết kế do dự án sử dụng Java trong bộ công cụ JCIA-VT là một giải pháp cho việc đảm bảo chất lượng mã nguồn. Thực nghiệm, đã cho thấy tiềm năng của phương pháp mà khóa luận đề xuất. Với ưu thế là phát triển công cụ trên nền tảng Web cho phép người dùng sử dụng ngay trên những trình duyệt mà không phải cài đặt thêm bất cứ thứ gì. Điều này thúc đẩy khả năng tiếp cận của công cụ tới người dùng.
 
 \noindent Đối với những dự án phần mềm, hoạt động bảo trì và nâng cấp diễn ra liên tục. Do đó, cần phải thực hiện kiểm thử lại toàn bộ hệ thống nhằm đảm bảo chất lượng cho từng phiên bản phần mềm điều này là rất khó khăn do tiêu tốn nhiều chi phí và thời gian. Hệ quả là không thể kiểm soát sự thay đổi mã nguồn, mã nguồn không đảm bảo tính nhất quán so với đặc tả và thiết kế ban đầu. Thêm vào đó, do sự phức tạp của mã nguồn cộng với quá trình bảo trì nâng cấp thường xuyên để có thể nắm bắt được toàn bộ cấu trúc mã nguồn là rất khó khăn, đặc biệt là với những nhà phát triển mới tham gia vào dự án. Với sự ra đời của công cụ mà khóa luận này xây dựng, sẽ đem lại sự trợ giúp đắc lực trong các dự án phần mềm. Bao gồm, kiểm tra sự nhất quán giữa mã nguồn với đặc tả thiết kế ban đầu về mẫu thiết kế qua từng phiên bản của phần mềm, giúp nhà phát triển nắm bắt được toàn bộ cấu trúc mã nguồn.
 
-\noindent Qua thực nghiệm, ta thấy công cụ hoạt động tốt với những mẫu thiết kế do doanh nghiệp tự định nghĩa, một số những mẫu thiết kế cơ bản thuộc \textit{GoF (Gang of Fours) design patters} \cite{go4}. Bên cạnh đó, do thời gian là có hạn, tập phụ thuộc cần được đúc kết và nghiên cứu trong thời gian dài do vậy sự chưa đầy đủ về mặt xác định phụ thuộc giữa các thành phần mã nguồn là không thể tránh khỏi, điều này dẫn tới trong thực nghiệm vẫn còn một số hạn chế về sự trùng lặp giữa các mẫu thiết kế, một số mẫu thiết kế chưa thể được phát hiện.
+\noindent Qua thực nghiệm, ta thấy công cụ hoạt động tốt với những mẫu thiết kế do doanh nghiệp tự định nghĩa, một số những mẫu thiết kế cơ bản thuộc \textit{GoF (Gang of Fours) design patters} \cite{go4}. Bên cạnh đó, do thời gian là có hạn, tập phụ thuộc cần được đúc kết và nghiên cứu trong thời gian dài do vậy sự chưa đầy đủ về mặt xác định phụ thuộc giữa các thành phần mã nguồn là không thể tránh khỏi, điều này dẫn tới trong thực nghiệm vẫn còn một số hạn chế về sự trùng lặp giữa các mẫu thiết kế, công cụ phát hiện sai. Nguyên nhân là do cấu trúc mẫu thiết kế đơn giản đồng thời số lượng phụ thuộc hạn chế, do vậy tạo ra sự trùng lặp giữa các mẫu thiết kế, công cụ phát hiện không chính xác mẫu thiết kế.
 
 \noindent Những hạn chế này sẽ được khắc phục trong những giai đoạn tiếp theo. Thực nghiệm cũng sẽ được thực hiện lại nhiều lần. Mục tiêu nhằm đem lại độ chính xác tốt hơn cho công cụ và trong tương lai công cụ có thể được đưa vào áp dụng trong thực tế tại các doanh nghiệp. Hiện tại công cụ đang nhận được một số phản hồi tích cực từ phía các chuyên gia tại Trung tâm Công nghệ và Quản lý chất lượng phần mềm Viettel.
 
