@@ -476,7 +476,8 @@ Hình 3.5 mô tả một AST với một Class Java tương ứng. Trong đó m�
 \subsection{Xây dựng đồ thị phụ thuộc từ cây cấu trúc}
 Đồ thị phụ thuộc nhằm thể hiện mối quan hệ về cấu trúc giữa các thành phần trong mã nguồn, sự tương tác giữa các thành phần như Class, Methol, Field, v.v. với nhau bên trong mã nguồn, tạo nên sự ảnh hưởng qua lại giữa chúng
 việc phân tích và xây dựng đồ thị phụ thuộc xoay quanh phương pháp kiểm sự tuân thủ mẫu thiết kế bên trong mã nguồn dự án.
-Đối với phương pháp mà khóa luận này đề xuất, đồ thị phụ thuộc được xây dựng là đồ thị có hướng.\\
+Đối với phương pháp mà khóa luận này đề xuất, đồ thị phụ thuộc được xây dựng là đồ thị có hướng.
+
 \noindent \textbf{Đồ thị phụ thuộc} (\textit{Định nghĩa}): là một đồ thị có hướng $G = \{V,E \}$, trong đo $V = \{v_1,v_2,v_3..v_k\}$ là tập các đỉnh của đồ thị với mỗi đỉnh tương ứng với một Class trong mã nguồn, $E = \{ e_ie_j | e_i \in V, e_j \in V  \}$ là tập các cạnh đinh hướng của đồ thị từ đỉnh $e_i$ tới $e_j$. Trên mỗi cạnh nối hai đỉnh chứa thuộc tính thể hiện sự phụ thuộc giữa hai đỉnh (class) của đồ thị (mã nguồn).
 
 \noindent Từ việc phân tích các loại phụ thuộc phái trên, ta tiến hành định nghĩa một tập những phụ thuộc, được hiểu như là các cạnh của đồ thị phụ thuộc. Tập các đỉnh là những Class. Được liệt kê tất cả trong Bảng 3.2 và Bảng 3.3 \cite{orucc2016}.
@@ -774,7 +775,7 @@ Quá trình phân tích mã nguồn hoàn thành, giao diện làm việc chính
 Mỗi màn hình đại diện cho một tính năng, \textit{Dependency view} là màn hình mặc định trong giao diện làm việc, những màn hình làm việc còn lại được cung cấp tại danh mục tùy chọn, thể hiện như trong Hình \ref{fig:main_screen}
 
 \noindent Tiếp theo, từ màn hình chính tại danh mục tính năng, ta lựa chọn \textit{Design Pattern} để chuyển tới màn hình làm việc của tính năng \textit{Kiểm tra sự tuân thủ mẫu thiết kế bên trong mã nguồn}. Hình \ref{fig:design_pattern_workspace} mô tả màn hình làm việc của tính năng \textit{Kiểm tra sự tuân thủ mẫu thiết kế}
-\begin{figure}[h]i
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.34]{images/design_pattern_workspace}
 	\caption{Màn hình tính năng kiểm tra sự tuân thủ mã nguồn}
@@ -846,7 +847,7 @@ Trong phần này của khóa luận, sẽ tiến hành thực nghiệm công c�
 	\vspace{-2.5cm}
 	\centering
 	\includegraphics[scale=0.4]{images/result_example_1}
-	\caption{Kết quả phân tích ví dụ 2}
+	\caption{Kết quả phân tích tại Ví dụ 2}
 	\label{fig:result_example_2}
 \end{figure}\\
 \newpage
@@ -856,7 +857,7 @@ Trong phần này của khóa luận, sẽ tiến hành thực nghiệm công c�
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=.7]{images/_abstract_factory_2.pdf}
-	\caption{Abstract Factory Diagram cho ví dụ 2}
+	\caption{Abstract Factory Diagram tại Ví dụ 2}
 	\label{fig:abstract_factory_diaram_2}
 \end{figure}\\
 \noindent \textbf{Các bước thực hiện}: Các bước thực hiện sẽ tương tự như ví dụ 1 
